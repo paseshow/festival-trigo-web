@@ -22,7 +22,7 @@ $tamaño-texto: 18px;
   & h2 {
     text-align: center;
     font-size: $tamaño-texto;
-    color: $texto-color;  
+    color: $texto-color;
   }
 }
 
@@ -34,6 +34,43 @@ $tamaño-texto: 18px;
   & h2 {
     text-align: center;
     font-size: $tamaño-texto;
-    color: $texto-color;  
+    color: $texto-color;
+  }
 }
+
+
+.trigar-logo {
+  width: 295px;
+}
+
+@media (min-width: 350px) {
+  .banners-organizan {
+    & img {
+      max-width: 44vw;
+    }
+  }
+
+
+  .banner-pattern {
+    & img {
+      max-width: 44vw;
+    }
+    & h2 {
+      font-size: 19px;
+    }
+  }
+
+  .banner-sponsor {
+    & img {
+      max-width: 44vw;
+    }
+    & h2 {
+      font-size: 19px;
+    }
+  }
+
+  .trigar-logo {
+    width: 170px;
+  }
+
 }
