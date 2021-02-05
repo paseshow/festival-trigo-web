@@ -16,18 +16,18 @@
                     <li class="nav-item active">
                         <a class="nav-link" (click)="smmoothScroll('stream')">STREAM</a>
                     </li>
-                    <!-- <li class="nav-item active">
+                    <li class="nav-item active">
                         <a class="nav-link" (click)="smmoothScroll('catalogosMarcas')">CATALOGOS DE MARCAS</a>
-                    </li> -->
+                    </li>
                     <li class="nav-item active">
                         <a class="nav-link" (click)="smmoothScroll('eventosPasados')">EVENTOS PASADOS</a>
                     </li>
-                    <!-- <li class="nav-item active liLogos">
+                    <li class="nav-item active liLogos">
                         <a ref="noreferrer noopener" target="_blank" href="https://www.instagram.com/minagricba/"><img class="logos" src="../../../assets/images/instagram-logo.png"></a>
                         <a ref="noreferrer noopener" target="_blank" href="https://www.facebook.com/MinAgriCba/"> <img class="logos" src="../../../assets/images/facebook.png"> </a>
                         <a ref="noreferrer noopener" target="_blank" href="https://twitter.com/minagricba?lang=es">
                             <img class="logos" src="../../../assets/images/twitter.png"></a>
-                    </li> -->
+                    </li>
                 </ul>
             </ul>
             <ul *ngIf="userAdmin" class="navbar-nav mr-auto">
@@ -39,7 +39,8 @@
                         <a class="nav-link" (click)="smmoothScroll('eventosPasados')">Reportes</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" (click)="smmoothScroll('inicio')">{{sesion}} Sesión</a>
+                        <a class="nav-link" (click)="smmoothScroll('inicio')">Sesión</a>
+                        <!-- {{sesion}}  -->
                     </li>
                 </ul>
             </ul>
