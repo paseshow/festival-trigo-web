@@ -1,6 +1,7 @@
 $fondo-color: #393939;
 $texto-color: white;
 $tamaño-texto: 18px;
+$tamaño-tituloagenda: 25px;
 
 .cuerpo-home {
   background-color: $fondo-color;
@@ -38,22 +39,36 @@ $tamaño-texto: 18px;
   }
 }
 
+.titulo-agenda{
+    color: $texto-color;
+    
+    font-size: $tamaño-tituloagenda;
+}
 
 .trigar-logo {
-  width: 295px;
+  width: 390px;
+  
 }
+
+.cronogramaimg img {
+    width: 500px;
+}
+.contenedor-agenda-logo{
+    text-align: center;
+}
+
 
 @media (min-width: 350px) {
   .banners-organizan {
     & img {
-      max-width: 44vw;
+      max-width: 120px;
     }
   }
 
 
   .banner-pattern {
     & img {
-      max-width: 44vw;
+      max-width: 120px;
     }
     & h2 {
       font-size: 19px;
@@ -62,7 +77,7 @@ $tamaño-texto: 18px;
 
   .banner-sponsor {
     & img {
-      max-width: 44vw;
+      max-width: 120px;
     }
     & h2 {
       font-size: 19px;
