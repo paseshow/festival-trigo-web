@@ -2,11 +2,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutes } from './app-routing.module';
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 // COMPONENTES -------------------------------------------------------
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     RouterModule.forRoot(AppRoutes)
   ],
   providers: [],

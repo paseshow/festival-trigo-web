@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
-
+import { AppRoutesHome } from './home.routing';
 
 @NgModule({
-    imports: [],
+    imports: [
+        RouterModule.forChild(AppRoutesHome)
+    ],
     exports: [],
     declarations: [
         HomeComponent

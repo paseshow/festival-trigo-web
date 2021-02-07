@@ -1,21 +1,24 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { HomeComponent } from './home/home.component';
-import { ConfiguracionEventoComponent } from './configuracion-evento/configuracion-evento.component';
-import { StreamingComponent } from './streaming/streaming.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
 // COMPONENTES ---------------------------------------------
+import { HomeComponent } from './home/home.component';
+import { StreamingComponent } from './streaming/streaming.component';
 
 
 @NgModule({
-    imports: [],
+    imports: [
+        RouterModule,
+        CommonModule,
+        BrowserModule
+    ],
     exports: [],
     declarations: [
-
-    HomeComponent,
-
-    ConfiguracionEventoComponent,
-
-    StreamingComponent],
+        HomeComponent,
+        StreamingComponent
+    ],
     providers: [],
 })
 export class ComponentsModule { }
