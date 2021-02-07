@@ -1,0 +1,91 @@
+$fondo-color: #393939;
+$texto-color: white;
+$tamaño-texto: 18px;
+$tamaño-tituloagenda: 25px;
+
+.cuerpo-home {
+  background-color: $fondo-color;
+}
+
+.banners-organizan {
+  text-align: center;
+
+  & img {
+    max-width: 15vw;
+  }
+}
+
+.banner-pattern {
+  & img {
+    max-width: 15vw;
+  }
+
+  & h2 {
+    text-align: center;
+    font-size: $tamaño-texto;
+    color: $texto-color;
+  }
+}
+
+.banner-sponsor {
+  & img {
+    max-width: 15vw;
+  }
+
+  & h2 {
+    text-align: center;
+    font-size: $tamaño-texto;
+    color: $texto-color;
+  }
+}
+
+.titulo-agenda{
+    color: $texto-color;
+    
+    font-size: $tamaño-tituloagenda;
+}
+
+.trigar-logo {
+  width: 390px;
+  
+}
+
+.cronogramaimg img {
+    width: 500px;
+}
+.contenedor-agenda-logo{
+    text-align: center;
+}
+
+
+@media (min-width: 350px) {
+  .banners-organizan {
+    & img {
+      max-width: 120px;
+    }
+  }
+
+
+  .banner-pattern {
+    & img {
+      max-width: 120px;
+    }
+    & h2 {
+      font-size: 19px;
+    }
+  }
+
+  .banner-sponsor {
+    & img {
+      max-width: 120px;
+    }
+    & h2 {
+      font-size: 19px;
+    }
+  }
+
+  .trigar-logo {
+    width: 170px;
+  }
+
+}
