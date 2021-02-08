@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Eventoes } from 'src/app/models/eventoes';
 import { EventoesService } from 'src/app/services/eventoes.service';
@@ -11,9 +11,12 @@ import Swal from 'sweetalert2';
 })
 export class ConfiguracionEventoComponent implements OnInit {
 
+  @ViewChild('btnModal', { static: false }) btnModal: ElementRef;
+
   spinner: boolean;
   tituloModal: string;
   formNewEvent: FormGroup;
+  modal_title: string;
 
   listEventos: Eventoes[];
 
@@ -26,6 +29,7 @@ export class ConfiguracionEventoComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.buildFormNewEvent();
     this.loadEvents();
   }
 
@@ -34,9 +38,9 @@ export class ConfiguracionEventoComponent implements OnInit {
   // ------------------------------------------------------
   buildFormNewEvent(): void {
     this.formNewEvent = this.fb.group({
-      nameEvent: ['', [Validators.required]],
-      linkEvent: ['', [Validators.required]],
-      activeChat: [false],
+      id: [''],
+      nameEvento: ['', [Validators.required]],
+      linkEvento: ['', [Validators.required]],
       fechaEvento: ['', [Validators.required]],
       active: [false]
     });
@@ -61,14 +65,66 @@ export class ConfiguracionEventoComponent implements OnInit {
   // @params: evento para editar
   //------------------------------------
   editEvent(): void {
+    if (this.modal_title == "Nuevo Evento") {
+      this.eventoesService.newEvent(this.formNewEvent).subscribe(
+        (next) => {
+          this.loadEvents();
+          this.btnModal.nativeElement.click();
+        }, error => {
 
+        }
+      )
+    } else {
+      this.eventoesService.updateEvent(this.formNewEvent).subscribe(
+        next => {
+          this.listEventos = next;
+          this.btnModal.nativeElement.click();
+        }, error => {
+
+        }
+      )
+    }
   };
+
+
+  //--------------------------
+  // Seteamos titulo del modal
+  //--------------------------
+  modalTitle(title: string, event?: Eventoes): void {
+    this.spinner = true;
+    switch (title) {
+      case 'agregar':
+        this.modal_title = "Nuevo Evento"
+
+        this.formNewEvent.setValue({
+          nameEvent: '',
+          linkEvent: '',
+          fechaEvento: '',
+          active: false
+        });
+
+        break;
+
+      case 'edit':
+        this.modal_title = "Editar Evento"
+
+        this.formNewEvent.setValue({
+          id: event.id,
+          nameEvento: event.nameEvento,
+          linkEvento: event.linkEvento,
+          fechaEvento: event.fechaEvento,
+          active: event.active
+        });
+        break;
+    }
+  }
 
   //------------------------------------
   // Borramos evento 
   // @params: evento para borrar
   //------------------------------------
   deletEvent(event: Eventoes): void {
+    this.spinner = true;
     Swal.fire({
       title: 'Esta seguro que quiere eliminar el evento?',
       showCancelButton: true,
@@ -76,17 +132,27 @@ export class ConfiguracionEventoComponent implements OnInit {
       cancelButtonColor: '#d33',
       confirmButtonText: 'Eliminar'
     }).then((result) => {
-      if (result) {
+      if (result.isConfirmed) {
         this.eventoesService.deleteEvento((event.id).toString()).subscribe(
           resp => {
           }, error => {
             if (error.status == 200) {
               this.loadEvents();
-              this.spinner = true;
+              this.spinner = false;
             }
           });
+      } else {
+        this.spinner = false;
       }
     })
   };
+
+
+  //------------------
+  // Cerramos modal
+  //------------------
+  cerrarModal(): void {
+    this.spinner = false;
+  }
 
 }
