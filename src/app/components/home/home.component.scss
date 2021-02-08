@@ -5,15 +5,25 @@ $tamaño-tituloagenda: 25px;
 
 .cuerpo-home {
   background-color: $fondo-color;
+  overflow-x: hidden;
 }
 
 .banners-organizan {
   text-align: center;
 
-  & img {
-    max-width: 200px;
-  }
 }
+
+.img-ban-org{
+    width: 100px;
+   
+}
+
+.img-ban-org-rec{
+    width: 170px;
+    
+}
+        
+
 
 .banner-pattern {
   & img {
@@ -57,20 +67,17 @@ $tamaño-tituloagenda: 25px;
     text-align: center;
 }
 
-.contenedor-img-agenda-ft{
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-}
 
-
-@media (min-width: 400px) {
-  .banners-organizan {
-    & img {
-      max-width: 120px;
+@media (max-width: 470px) {
+  
+    .img-ban-org{
+        width: 85px;
+    
     }
-  }
 
+    .img-ban-org-rec{
+        width: 120px;
+    }
 
   .banner-pattern {
       
@@ -95,8 +102,14 @@ $tamaño-tituloagenda: 25px;
     width: 170px;
   }
 
+  .contenedor-img-agenda-ft{
+      text-align: center;
+  }
+
   .cronogramaimg{
-      width: 160px;
+      width: 360px;
+      
+      
   }
 
 }
