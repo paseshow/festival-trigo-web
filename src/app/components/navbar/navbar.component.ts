@@ -27,7 +27,7 @@ export class NavbarComponent implements OnInit {
     // Validamos si hay algun usuario logueado
     //----------------------------------------
     ngOnChanges(): void {
-        if (localStorage.getItem('token') && localStorage.getItem('idUser')) {
+        if (localStorage.getItem('token')) {
             this.sesion = 'Cerrar';
         }
     };

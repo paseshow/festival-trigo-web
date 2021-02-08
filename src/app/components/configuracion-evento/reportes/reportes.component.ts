@@ -1,5 +1,6 @@
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Formularios } from 'src/app/models/formularios';
 import { FormulariosService } from 'src/app/services/formularios.service';
 
@@ -14,27 +15,24 @@ export class ReportesComponent implements OnInit {
   tipoReporte: string;
 
   constructor(
-    private formulariosService: FormulariosService
+    private formulariosService: FormulariosService,
+    private route: Router
   ) {
     this.tipoReporte = '0';
     this.spinner = false;
   }
 
   ngOnInit(): void {
+    this.validUserLogged();
   }
 
-  //-------------------------------------
-  // Descargamos reporte en formato .xlxs
-  //-------------------------------------
-  downloadReport(): void {
-    this.spinner = true;
-    this.formulariosService.getReporteFormularios().subscribe(
-      resp => {
-        this.spinner = false;
-      }, error => {
-
-      }
-    )
+  //---------------------------------------
+  // Validamos si hay algun usuario logeado
+  //---------------------------------------
+  validUserLogged(): void {
+    if (!localStorage.getItem('token')) {
+      this.route.navigate(['/configuracionEvento']);
+    }
   };
 
   selectTipoReport(event) {
