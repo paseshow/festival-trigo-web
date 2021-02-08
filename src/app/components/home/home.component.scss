@@ -11,13 +11,13 @@ $tamaño-tituloagenda: 25px;
   text-align: center;
 
   & img {
-    max-width: 15vw;
+    max-width: 200px;
   }
 }
 
 .banner-pattern {
   & img {
-    max-width: 15vw;
+    max-width: 200px;
   }
 
   & h2 {
@@ -29,7 +29,7 @@ $tamaño-tituloagenda: 25px;
 
 .banner-sponsor {
   & img {
-    max-width: 15vw;
+    max-width: 200px;
   }
 
   & h2 {
@@ -46,19 +46,25 @@ $tamaño-tituloagenda: 25px;
 }
 
 .trigar-logo {
-  width: 390px;
+  width:290px;
   
 }
 
-.cronogramaimg img {
+.cronogramaimg {
     width: 500px;
 }
 .contenedor-agenda-logo{
     text-align: center;
 }
 
+.contenedor-img-agenda-ft{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
 
-@media (min-width: 350px) {
+
+@media (min-width: 400px) {
   .banners-organizan {
     & img {
       max-width: 120px;
@@ -67,6 +73,7 @@ $tamaño-tituloagenda: 25px;
 
 
   .banner-pattern {
+      
     & img {
       max-width: 120px;
     }
@@ -86,6 +93,10 @@ $tamaño-tituloagenda: 25px;
 
   .trigar-logo {
     width: 170px;
+  }
+
+  .cronogramaimg{
+      width: 160px;
   }
 
 }
