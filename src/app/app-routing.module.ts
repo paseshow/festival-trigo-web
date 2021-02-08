@@ -1,10 +1,18 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes } from '@angular/router';
 
-const routes: Routes = [];
+export const AppRoutes: Routes = [
+  {
+    path: '',
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('./components/components.module').then(m => m.ComponentsModule)
+      },
+      {
+        path: 'configuracionEvento',
+        loadChildren: () => import('./components/configuracion-evento/configuracion-evento.module').then(m => m.ConfiguracionEventoModule)
+      },
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
+    ]
+  }
+];
