@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Eventoes } from 'src/app/models/eventoes';
+import { EventoesService } from 'src/app/services/eventoes.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -13,13 +15,18 @@ export class ConfiguracionEventoComponent implements OnInit {
   tituloModal: string;
   formNewEvent: FormGroup;
 
+  listEventos: Eventoes[];
+
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private eventoesService: EventoesService
   ) {
-    this.tituloModal = 'Agregar evento'
+    this.tituloModal = 'Agregar evento';
+    this.listEventos = [];
   }
 
   ngOnInit(): void {
+    this.loadEvents();
   }
 
   // ------------------------------------------------------
@@ -35,6 +42,20 @@ export class ConfiguracionEventoComponent implements OnInit {
     });
   };
 
+  //--------------------------------------------
+  // Traemos todos los eventos que se encuentran
+  // cargados en la base de datos
+  //--------------------------------------------
+  loadEvents() {
+    this.eventoesService.getListEvents().subscribe(
+      resp => {
+        this.listEventos = resp;
+      }, error => {
+
+      }
+    );
+  }
+
   //------------------------------------
   // Abrimos modal de evento para editar
   // @params: evento para editar
@@ -47,7 +68,7 @@ export class ConfiguracionEventoComponent implements OnInit {
   // Borramos evento 
   // @params: evento para borrar
   //------------------------------------
-  deletEvent(): void {
+  deletEvent(event: Eventoes): void {
     Swal.fire({
       title: 'Esta seguro que quiere eliminar el evento?',
       showCancelButton: true,
@@ -56,7 +77,14 @@ export class ConfiguracionEventoComponent implements OnInit {
       confirmButtonText: 'Eliminar'
     }).then((result) => {
       if (result) {
-        this.spinner = true;
+        this.eventoesService.deleteEvento((event.id).toString()).subscribe(
+          resp => {
+          }, error => {
+            if (error.status == 200) {
+              this.loadEvents();
+              this.spinner = true;
+            }
+          });
       }
     })
   };

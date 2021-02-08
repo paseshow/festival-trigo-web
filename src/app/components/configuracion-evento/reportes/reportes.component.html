@@ -7,6 +7,7 @@
     <select class="form-select" aria-label="Default select example" (change)="selectTipoReport($event)">
         <option selected value=0>Tipo reporte</option>
         <option value="1">Formularios</option>
-      </select>
-    <button type="button" class="btn btn-success" (click)="downloadReport()" [disabled]="!(tipoReporte != '0')">Descargar</button>
+    </select>
+    <!-- (click)="downloadReport()" -->
+    <a href="http://localhost:8080/formularios/export/listado"> <button type="button" class="btn btn-success" [disabled]="!(tipoReporte != '0')">Descargar</button></a>
 </div>

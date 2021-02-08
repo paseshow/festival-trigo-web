@@ -2,6 +2,7 @@ import { Route } from '@angular/compiler/src/core';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, Routes } from '@angular/router';
+import { Login } from 'src/app/models/login';
 import { LoginService } from 'src/app/services/login.service';
 
 @Component({
@@ -39,14 +40,28 @@ export class AuthenticationComponent implements OnInit {
   // Logueamos el usuario a configurar eventos 
   //------------------------------------------
   loggedUser(): void {
+    let login = new Login();
 
+    login.nameUser = this.formLogin.get("nameUser").value;
+    login.password = this.formLogin.get("passwordUser").value;
+
+    this.loginService.authentication(login).subscribe(
+      (resp: any) => {
+        if (resp.token != null) {
+          localStorage.setItem("token", resp.token);
+          this.validUserLogged();
+        }
+      }, error => {
+
+      }
+    );
   };
 
   //---------------------------------------
   // Validamos si hay algun usuario logeado
   //---------------------------------------
   validUserLogged(): void {
-    if (localStorage.getItem('token') && localStorage.getItem('idUser')) {
+    if (localStorage.getItem('token')) {
       this.route.navigate(['/configuracionEvento/admin']);
     }
   };
