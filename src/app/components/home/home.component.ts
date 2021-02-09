@@ -19,11 +19,11 @@ export class HomeComponent implements OnInit {
 
   slideConfig = {
     "slidesToShow": 6,
-    "slidesToScroll": 1,
+    "slidesToScroll": 6,
     "nextArrow": "<div class='nav-btn next-slide'></div>",
     "prevArrow": "<div class='nav-btn prev-slide'></div>",
-    "dots": true,
-    "infinite": false
+    "dots": false,
+    "infinite": true
   };
 
   // addSlide() {
