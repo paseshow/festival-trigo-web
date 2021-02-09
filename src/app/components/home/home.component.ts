@@ -12,10 +12,11 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  slides = [342, 453, 846, 855, 234, 564, 744, 243];
+  slides = ["BolsaCerealesBahiaB", "BolsaCerealescordoba" , "BolsadeCereales", "Clubleones", "Cordobaentretodos", "MinisterioAgriculturaganaderia", "Sociedadruraleones"];
+
 
   slideConfig = {
-    "slidesToShow": 6,
+    "slidesToShow": 7,
     "slidesToScroll": 1,
     "nextArrow": "<div class='nav-btn next-slide'></div>",
     "prevArrow": "<div class='nav-btn prev-slide'></div>",
@@ -24,7 +25,7 @@ export class HomeComponent implements OnInit {
   };
 
   addSlide() {
-    this.slides.push(488)
+    this.slides.push()
   }
 
   removeSlide() {
