@@ -12,15 +12,14 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // slides = ["BolsaCerealesBahiaB", "BolsaCerealescordoba" , "BolsadeCereales", "Clubleones", "Cordobaentretodos", "MinisterioAgriculturaganaderia", "Sociedadruraleones"];
-
   slides = [{nombre: "alcance", tamano: "100"},{nombre: "asoCoperatArg", tamano: "100"}, {nombre: "bancor", tamano: "100"}, {nombre: "bertoto", tamano: "100"}, {nombre: "capello", tamano: "100"}, {nombre: "contimix", tamano: "100"}, {nombre: "contingiani", tamano: "100"}, {nombre: "coperativaleones", tamano: "100"}, {nombre: "gastaldi", tamano: "100"}, {nombre: "leones2", tamano: "100"}, {nombre: "metalfor", tamano: "100"}, {nombre: "ministerioAgGan", tamano: "100"}, {nombre: "salas", tamano: "100"}, {nombre: "torregiani", tamano: "100"}, {nombre: "union100", tamano: "100"}];
 
+  images = ["bcca", "bolsacereales", "bolsacerealesba", "cbatodos", "escudoleones", "logoleones"];
 
   slideConfig = {
     "slidesToShow": 6,
     "slidesToScroll": 6,
-    "nextArrow": "<div class='nav-btn next-slide'></div>",
+    "nextArrow": "<div class='nav-btn next-slide '></div>",
     "prevArrow": "<div class='nav-btn prev-slide'></div>",
     "dots": false,
     "infinite": true

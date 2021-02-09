@@ -6,59 +6,63 @@
       width="100%">
   </div>
 
-<!-- CARRUSEL -->
-<ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
-    
+  <!-- CARRUSEL -->
+  <ngx-slick-carousel id="carouselExampleControls" data-ride="carousel" class="carousel" #slickModal="slick-carousel"
+    [config]="slideConfig">
+
     <div ngxSlickItem *ngFor="let slide of slides" class="col slide">
 
       <img src="../../../assets/images/sponsors/{{ slide.nombre }}.png" alt="carrusel" width="100%">
+
     </div>
+
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
 
   </ngx-slick-carousel>
 
 
-<!--BANNERS ORGANIZAN-->
-
-<!-- <div class="container-fluid">
-    <div class="row" style="text-align: center;">
-
-      <div class="col-6 col-md-2">
-        <img class="img-ban-org-rec" src="../../../assets/images/logosOrganizadores/BolsaCerealescordoba.png"
-          alt="bolsa cereales cordoba">
-      </div>
-      <div class="col-6 col-md-2">
-        <img class="img-ban-org-rec" src="../../../assets/images/logosOrganizadores/BolsadeCereales.png"
-          alt="bolsa cereales">
-      </div>
-      <div class="col-6 col-md">
-
-        <img class="img-ban-org" src="../../../assets/images/logosOrganizadores/BolsaCerealesBahiaB.png"
-          alt="bolsa bahia blanca">
+  <!--BANNERS ORGANIZAN-->
+  <!-- titulos patern y org -->
+  <div class="container" style="margin-top: 15px;">
+    <div class="row">
+      <div class="col-2 col-md-2">
+        <div>
+          <h2 class="text-center titulo-agenda">Paterns</h2>
+        </div>
       </div>
 
-      <div class="col-6 col-md">
-        <img class="img-ban-org" src="../../../assets/images/logosOrganizadores/Clubleones.png" alt="club leones">
+      <div class="col-10 col-md-10">
+        <div>
+          <h2 class="text-center titulo-agenda">Organizan e invitan</h2>
+        </div>
       </div>
-      <div class="col-6 col-md">
-        <img class="img-ban-org" src="../../../assets/images/logosOrganizadores/MinisterioAgriculturaganaderia.png"
-          alt="ministerio agricultura y ganaderia">
-      </div>
-      <div class="col-6 col-md-2">
 
-        <img class="img-ban-org" src="../../../assets/images/logosOrganizadores/Cordobaentretodos.png"
-          alt="cordoba entre todos">
-      </div>
-      <div class="col-12 col-md-3">
+      <!-- Logospaterns y organizan -->
+      <div class="row">
+        <div class="col-2 col-md-2">
+          <img class="img-ban-org-rec" src="../../../assets/images/patern/patern.png" alt="bolsa cereales cordoba">
+        </div>
 
-        <img class="img-ban-org" src="../../../assets/images/logosOrganizadores/Sociedadruraleones.png"
-          alt="cordoba entre todos">
+        <!-- ------ -->
+        <div *ngFor="let image of images" class="col-10 col-md-10 d-flex justify-content-around">
+
+          <img src="../../../assets/images/logosOrganizadores/{{image}}.png" alt="logos-organizadores">
+
+        </div>
+
       </div>
     </div>
-  </div> -->
+  </div>
+  <!--BANNERS DIVIDIDOS-->
 
-<!--BANNERS DIVIDIDOS-->
-
-<!-- <div class="d-flex flex-row justify-content-around">
+  <!-- <div class="d-flex flex-row justify-content-around">
 
   
   <div class="banner-sponsor">
@@ -95,79 +99,81 @@
 </div> -->
 
 
-<!-- CRONOGRAMA CON FOTOS -->
+  <!-- CRONOGRAMA CON FOTOS -->
 
-<div class="fondo-crono-tri">
+  <div class="fondo-crono-tri container-fluid">
 
-  <!-- AGENDA Y SPEAKERS -->
-  <div class="d-flex justify-content-center">
+    <!-- AGENDA Y SPEAKERS -->
+    <div class="d-flex justify-content-center">
 
-    <img class="trigar-logo" src="../../../assets/images/logos/Trigar.png" alt="Trigar">
+      <img class="trigar-logo" src="../../../assets/images/logos/Trigar.png" alt="Trigar">
 
+    </div>
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col col-md-6">
+          <h2 class="titulo-agenda"> Jueves 11 Febrero</h2>
+          <img class="cronogramaimg" src="../.../../../../assets/images/agenda/cronograma-1.png" alt="cronograma1">
+          <img class="cronogramaimg" src="../../../assets/images/agenda/Cronograma-2.png" alt="">
+        </div>
+
+        <div class="col col-md-6">
+          <h2 class="titulo-agenda"> Viernes 12 Febrero</h2>
+          <img class="cronogramaimg" src="../../../assets/images/agenda/cronograma-3.png" alt="">
+        </div>
+
+
+      </div>
+    </div>
   </div>
 
-  <div class="container">
+
+  <!-- CRONOGRAMA CON TRIGUITOS -->
+  <div class="fondo-crono-ft">
+
+    <div class="contenedor-agenda-logo">
+      <img src="../../../assets/images/logos/Fiestanacionaltrigo.png" alt="fiesta nacional del trigo" width=" 310px">
+      <h2 class="titulo-agenda">Sábado 13 de febrero</h2>
+    </div>
+
+    <div class="container contenedor-img-agenda-ft d-flex justify-content-center">
+      <div class="row">
+
+        <div class="col-12 col-md-6 text-center">
+          <img class="cronogramaimg" src=".../../../../../assets/images/agenda/cronogramaFNT1.png"
+            alt="cronograma1-23">
+        </div>
+
+        <div class="col-12 col-md-6 text-center">
+          <img class="cronogramaimg" src=".../../../../../assets/images/agenda/cronogramaFNT2.png"
+            alt="cronograma1-24">
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- INSTRUCCIONES PARA INGRESAR AL STREAM -->
+  <div class="container inst-str">
     <div class="row">
 
-      <div class="col col-md-6">
-        <h2 class="titulo-agenda"> Jueves 11 Febrero</h2>
-        <img class="cronogramaimg" src="../.../../../../assets/images/agenda/cronograma-1.png" alt="cronograma1">
-        <img class="cronogramaimg" src="../../../assets/images/agenda/Cronograma-2.png" alt="">
+      <h1 class="instrucciones-text">INSTRUCCIONES PARA INGRESAR AL STREAMING</h1>
+
+      <div class="icon-stream">
+        <i class="bi bi-display"></i>
+
       </div>
 
-      <div class="col col-md-6">
-        <h2 class="titulo-agenda"> Viernes 12 Febrero</h2>
-        <img class="cronogramaimg" src="../../../assets/images/agenda/cronograma-3.png" alt="">
+      <div class="boton-contenedor">
+        <button class="boton-ing-str" type="button">Ir al Streaming</button>
       </div>
+
+
 
 
     </div>
+    <!-- finRow -->
   </div>
-</div>
-
-
-<!-- CRONOGRAMA CON TRIGUITOS -->
-<div class="fondo-crono-ft">
-
-  <div class="contenedor-agenda-logo">
-    <img src="../../../assets/images/logos/Fiestanacionaltrigo.png" alt="fiesta nacional del trigo" width=" 310px">
-    <h2 class="titulo-agenda">Sábado 13 de febrero</h2>
-  </div>
-
-  <div class="container contenedor-img-agenda-ft">
-    <div class="row">
-
-      <div class="col-12 col-md-6">
-        <img class="cronogramaimg" src=".../../../../../assets/images/agenda/cronograma-1-23.png" alt="cronograma1-23">
-      </div>
-
-      <div class="col-12 col-md-6">
-        <img class="cronogramaimg" src=".../../../../../assets/images/agenda/cronograma-1-24.png" alt="cronograma1-24">
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<!-- INSTRUCCIONES PARA INGRESAR AL STREAM -->
-<div class="container">
-  <div class="row">
-
-    <h1 class="instrucciones-text">INSTRUCCIONES PARA INGRESAR AL STREAMING</h1>
-
-    <div class="icon-stream">
-      <i class="bi bi-display"></i>
-
-    </div>
-
-    <div class="boton-contenedor">
-      <button class="boton-ing-str" type="button">Ir al Streaming</button>
-    </div>
-
-
-
-
-  </div>
-  <!-- finRow -->
-</div>
-<!-- finContainer -->
+  <!-- finContainer -->
