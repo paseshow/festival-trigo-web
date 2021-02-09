@@ -1,30 +1,40 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <div class="container containerNavbar">
+        <a class="navbar-brand">
+            <img src="../../../assets/images/logos/Trigar.png" alt="" width="120" height="45">
+            <img src="../../../assets/images/logos/Fiestanacionaltrigo.png" alt="" width="115" height="60" style="margin-left: 10px;">
+        </a>
+    </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <form class="form-inline my-2 my-lg-0">
-            <ul *ngIf="userConfig" class="navbar-nav mr-auto">
+            <ul *ngIf="userConfig" class="navbar-nav mr-auto ">
                 <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" (click)="smmoothScroll('inicio')">INICIO</a>
+                    <li class="nav-item ">
+                        <a class="nav-link active" (click)="smmoothScroll('inicio')">Inicio</a>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" (click)="smmoothScroll('stream')">STREAM</a>
+                    <li class="nav-item ">
+                        <a class="nav-link active" (click)="openStream()" style="background-color: red; border-radius: 5px;">¡Stream!</a>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" (click)="smmoothScroll('catalogosMarcas')">CATALOGOS DE MARCAS</a>
+                    <li class="nav-item ">
+                        <a class="nav-link active" (click)="smmoothScroll('catalogosMarcas')">Cronograma</a>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" (click)="smmoothScroll('eventosPasados')">EVENTOS PASADOS</a>
+                    <li class="nav-item ">
+                        <a class="nav-link active" (click)="smmoothScroll('eventosPasados')">Otras Ediciones</a>
                     </li>
-                    <li class="nav-item active liLogos">
+                    <li class="nav-item ">
+                        <a class="nav-link active" (click)="smmoothScroll('eventosPasados')">Historia</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link active" (click)="smmoothScroll('eventosPasados')">Contacto</a>
+                    </li>
+                    <!-- <li class="nav-item liLogos">
                         <a ref="noreferrer noopener" target="_blank" href="https://www.instagram.com/minagricba/"><img class="logos" src="../../../assets/images/instagram-logo.png"></a>
                         <a ref="noreferrer noopener" target="_blank" href="https://www.facebook.com/MinAgriCba/"> <img class="logos" src="../../../assets/images/facebook.png"> </a>
-                        <a ref="noreferrer noopener" target="_blank" href="https://twitter.com/minagricba?lang=es">
-                            <img class="logos" src="../../../assets/images/twitter.png"></a>
-                    </li>
+                    </li> -->
                 </ul>
             </ul>
             <ul *ngIf="!userConfig" class="navbar-nav mr-auto">

@@ -1,5 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Eventoes } from 'src/app/models/eventoes';
+import { EventoesService } from 'src/app/services/eventoes.service';
+import Swal from 'sweetalert2'
 
 @Component({
     selector: 'app-navbar',
@@ -11,11 +14,13 @@ export class NavbarComponent implements OnInit {
 
     userAdmin: boolean;
     sesion: string;
+    eventoActivo: Eventoes;
 
     @Input() userConfig: boolean;
 
     constructor(
-        private route: Router
+        private route: Router,
+        private eventoesService: EventoesService
     ) {
         this.userAdmin = false;
         this.sesion = 'Iniciar';
@@ -52,6 +57,32 @@ export class NavbarComponent implements OnInit {
                 this.route.navigate(['/configuracionEvento']);
                 break;
         }
+    };
 
+    //-----------------------------------------------------------
+    // Antes de redirigir al stream, validamos la fecha y la hora
+    // con el evento habilitado.
+    //-----------------------------------------------------------
+    openStream(): void {
+        this.eventoesService.getEventosActivos().subscribe(
+            next => {
+                let fechaHoy: any = Date.now();
+
+                next.forEach(unEvento => {
+                    if (Date.parse(unEvento.fechaEvento) < fechaHoy)
+                        this.route.navigate(['/stream']);
+                    else {
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'error',
+                            title: 'Aun el evento no esta activo!',
+                            showConfirmButton: false,
+                            timer: 2000
+                        })
+                    }
+                });
+            }, error => {
+
+            });
     };
 }

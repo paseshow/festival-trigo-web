@@ -1,7 +1,14 @@
 <div class="container-fluid fondoStream vh-100">
 
     <div class="streaming">
-        <video class="video-js vjs-default-skin" controls autoplay width="640" height="564" data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=iBAs3TGIz7M"}], "youtube": { "iv_load_policy": 1 } }'>
-        </video>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="outer">
+                        <div plyr id="player" [plyrPlaysInline]="true" [plyrSources]="sourceVideo" (plyrInit)="reproductor = $event" (plyrPlay)="played($event)"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
