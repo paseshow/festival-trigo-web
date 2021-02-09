@@ -84,9 +84,16 @@ $tamaño-tituloagenda: 25px;
 .next-slide:hover {
   background-position: -24px -53px;
 }
-///////////
-        
 
+
+.fondo-ban-po{
+  background-color: white;
+}
+
+.size-mo{
+  width: 80%;
+}
+///////////
 
 .banner-pattern {
   & img {
@@ -238,6 +245,10 @@ $tamaño-tituloagenda: 25px;
 
 }
 
+.tit-logos{
+  font-size: 20px;
+}
+
 @media (max-width: 470px) {
   
     .img-ban-org{
@@ -272,11 +283,6 @@ $tamaño-tituloagenda: 25px;
     width: 170px;
   }
 
-  // .contenedor-img-agenda-ft{
-  //     margin: auto;
-      
-  // }
-
   .cronogramaimg{
       width: 310px;
       
@@ -294,7 +300,16 @@ $tamaño-tituloagenda: 25px;
     width: 155px;
     height: 55px;
     font-size: large;
+}
 
+
+.size-mo{
+  width: 80%;
+}
+
+.tit-logos{
+  font-size: 15px;
+  margin: auto;
 }
 
 }

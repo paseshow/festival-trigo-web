@@ -30,73 +30,64 @@
 
   <!--BANNERS ORGANIZAN-->
   <!-- titulos patern y org -->
-  <div class="container" style="margin-top: 15px;">
+  <div class="container-fluid fondo-ban-po" style="margin-top: 15px;">
     <div class="row">
       <div class="col-2 col-md-2">
         <div>
-          <h2 class="text-center titulo-agenda">Paterns</h2>
+          <h2 class="tit-logos text-center" style="margin-right: 40px;">Paterns</h2>
         </div>
       </div>
 
       <div class="col-10 col-md-10">
         <div>
-          <h2 class="text-center titulo-agenda">Organizan e invitan</h2>
+          <h2 class="tit-logos text-center">Organizan e invitan</h2>
         </div>
       </div>
 
-      <!-- Logospaterns y organizan -->
+      <!-- Logos paterns y organizan -->
+
       <div class="row">
+
         <div class="col-2 col-md-2">
-          <img class="img-ban-org-rec" src="../../../assets/images/patern/patern.png" alt="bolsa cereales cordoba">
+          <img class="size-mo" src="../../../assets/images/patern/patern.png" alt="bolsa cereales cordoba">
         </div>
 
-        <!-- ------ -->
-        <div *ngFor="let image of images" class="col-10 col-md-10 d-flex justify-content-around">
 
-          <img src="../../../assets/images/logosOrganizadores/{{image}}.png" alt="logos-organizadores">
+         <div class="col-10 col-md-10 d-flex flex-md-row align-items-center justify-content-around">
 
-        </div>
+          <div *ngFor="let image of images">
 
-      </div>
-    </div>
-  </div>
-  <!--BANNERS DIVIDIDOS-->
+            <img  class="size-mo" src="../../../assets/images/logosOrganizadores/{{image}}.png" alt="logos-organizadores">
 
-  <!-- <div class="d-flex flex-row justify-content-around">
-
-  
-  <div class="banner-sponsor">
-    <h2>SPONSORS</h2>
-
-    <div class="container">
-      <div class="row">
-
-        <div class="col-6">
-
-          <img src="../../../assets/images/logosOrganizadores/BolsaCerealesBahiaB.png" alt="bolsa bahia blanca">
-
-        </div>
-
-        <div class="col-6">
-
-          <img src="../../../assets/images/logosOrganizadores/Clubleones.png" alt="club leones">
-
+          </div>
         </div>
 
       </div>
     </div>
-
   </div>
 
+  <!--SPONSOR FIESTA NACIONAL-->
 
-  <div class="banner-pattern">
-    <h2>PATERNS</h2>
-    <img src="../../../assets/images/logosOrganizadores/BolsaCerealesBahiaB.png" alt="bolsa bahia blanca">
-    <img src="../../../assets/images/logosOrganizadores/Clubleones.png" alt="club leones">
+  <div class="container-fluid fondo-ban-po">
+    <div class="row">
 
+      <div class="col col-md-12 text-center" style="padding: 5px;">
+        <h2 class="tit-logos"> Organizadores Oficiales </h2>
+      </div>
+
+
+      <div class="d-flex flex-md-row align-items-center">
+
+        <div class="col col-md" *ngFor="let logo of logosOficiales">
+
+          <img class="size-mo" src="../../../assets/images/logosOficiales/{{logo}}.png" alt="logos-oficiales">
+
+        </div>
+
+      </div>
+
+    </div>
   </div>
-
-</div> -->
 
 
   <!-- CRONOGRAMA CON FOTOS -->
@@ -142,13 +133,11 @@
       <div class="row">
 
         <div class="col-12 col-md-6 text-center">
-          <img class="cronogramaimg" src=".../../../../../assets/images/agenda/cronogramaFNT1.png"
-            alt="cronograma1-23">
+          <img class="cronogramaimg" src=".../../../../../assets/images/agenda/cronogramaFNT1.png" alt="cronograma1-23">
         </div>
 
         <div class="col-12 col-md-6 text-center">
-          <img class="cronogramaimg" src=".../../../../../assets/images/agenda/cronogramaFNT2.png"
-            alt="cronograma1-24">
+          <img class="cronogramaimg" src=".../../../../../assets/images/agenda/cronogramaFNT2.png" alt="cronograma1-24">
         </div>
 
       </div>

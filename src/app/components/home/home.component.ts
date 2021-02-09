@@ -16,6 +16,8 @@ export class HomeComponent implements OnInit {
 
   images = ["bcca", "bolsacereales", "bolsacerealesba", "cbatodos", "escudoleones", "logoleones"];
 
+  logosOficiales = ["agufran", "biolato", "bonxi", "cbajoven", "guantex", "gulf", "klein", "norte", "releyco", "cegro"]
+  
   slideConfig = {
     "slidesToShow": 6,
     "slidesToScroll": 6,
