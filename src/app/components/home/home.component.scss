@@ -1,0 +1,157 @@
+$fondo-color: #393939;
+$texto-color: white;
+$streaming-color: #e3c06c;
+$fondo-grisclaro: #707070;
+$tamaño-texto: 18px;
+$tamaño-tituloagenda: 25px;
+.cuerpo-home {
+    background-color: $fondo-color;
+    overflow-x: hidden;
+}
+
+.slider-home {
+    margin-bottom: 40px;
+}
+
+// .slider-img{
+//     width: "100%";
+//     height: "30%";
+// }
+.banners-organizan {
+    text-align: center;
+}
+
+.img-ban-org {
+    width: 100px;
+}
+
+.img-ban-org-rec {
+    width: 170px;
+}
+
+.banner-pattern {
+    & img {
+        max-width: 200px;
+    }
+    & h2 {
+        text-align: center;
+        font-size: $tamaño-texto;
+        color: $texto-color;
+    }
+}
+
+.banner-sponsor {
+    & img {
+        max-width: 200px;
+    }
+    & h2 {
+        text-align: center;
+        font-size: $tamaño-texto;
+        color: $texto-color;
+    }
+}
+
+.titulo-agenda {
+    color: $texto-color;
+    font-size: $tamaño-tituloagenda;
+    text-align: center;
+}
+
+.fondo-crono-ft {
+    background-repeat: repeat-x;
+    background-image: url("../../../assets/images/fondo/trama-marron-de-fondo.png");
+    background-color: $fondo-grisclaro;
+}
+
+.fondo-crono-tri {
+    background-repeat: repeat-x;
+    background-image: url("../../../assets/images/fondo/trama-gris-de-fondo.png");
+}
+
+.trigar-logo {
+    width: 290px;
+}
+
+.cronogramaimg {
+    width: 500px;
+}
+
+.contenedor-agenda-logo {
+    text-align: center;
+}
+
+.instrucciones-text {
+    color: $streaming-color;
+    font-size: 40px;
+    text-align: center;
+}
+
+.boton-contenedor {
+    text-align: center;
+}
+
+.bi-display {
+    color: #e3c06c;
+    width: 200px;
+}
+
+.boton-ing-str {
+    background-color: $streaming-color;
+    border-radius: 50px;
+    border: none;
+    width: 250px;
+    height: 55px;
+    font-size: large;
+}
+
+.containerContacto {
+    background-color: $fondo-color;
+}
+
+.textRedesSociales {
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
+    text-align: center;
+}
+
+.logosImgRedes {
+    margin: 20px 0;
+}
+
+@media (max-width: 470px) {
+    .img-ban-org {
+        width: 85px;
+    }
+    .img-ban-org-rec {
+        width: 120px;
+    }
+    .banner-pattern {
+        & img {
+            max-width: 120px;
+        }
+        & h2 {
+            font-size: 19px;
+        }
+    }
+    .banner-sponsor {
+        & img {
+            max-width: 120px;
+        }
+        & h2 {
+            font-size: 19px;
+        }
+    }
+    .trigar-logo {
+        width: 170px;
+    }
+    .contenedor-img-agenda-ft {
+        text-align: center;
+    }
+    .cronogramaimg {
+        width: 360px;
+    }
+    .textRedesSociales {
+        font-size: 18px;
+    }
+}

@@ -1,0 +1,23 @@
+<div class="containerLogin paddingTop">
+    <form class="paddingForm" [formGroup]="formLogin" (submit)="loggedUser()">
+        <div class="mb-3">
+            <label class="form-label">DNI:</label>
+            <input type="email" class="form-control" placeholder="email@example.com" formControlName="nameUser">
+            <label class="camposRequeridos" *ngIf="this.formLogin.get('nameUser').invalid">Campo requerido!</label>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input type="password" class="form-control" placeholder="Password" formControlName="passwordUser">
+            <label class="camposRequeridos" *ngIf="this.formLogin.get('passwordUser').invalid">Campo requerido!</label>
+        </div>
+        <!-- <div class="mb-3">
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input">
+                <label class="form-check-label" for="dropdownCheck2">
+                    Remember me
+                </label>
+            </div>
+        </div> -->
+        <button type="submit" class="btn btn-primary" [disabled]="this.formLogin.invalid">Sign in</button>
+    </form>
+</div>
