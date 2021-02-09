@@ -5,83 +5,96 @@
         <img class="slider-img" src="../../../assets/images/fondo/Slider-del-sitio-web-1.jpg" alt="slider-home" width="100%">
     </div>
 
-    <!--BANNERS ORGANIZAN-->
-    <div class="container-fluid">
-        <div class="row" style="text-align: center;">
 
-            <div class="col-6 col-md-2">
-                <img class="img-ban-org-rec" src="../../../assets/images/logosOrganizadores/BolsaCerealescordoba.png" alt="bolsa cereales cordoba">
-            </div>
-            <div class="col-6 col-md-2">
-                <img class="img-ban-org-rec" src="../../../assets/images/logosOrganizadores/BolsadeCereales.png" alt="bolsa cereales">
-            </div>
-            <div class="col-6 col-md">
+    <!-- CARRUSEL -->
+    <div class="contenedor-carrusel">
 
-                <img class="img-ban-org" src="../../../assets/images/logosOrganizadores/BolsaCerealesBahiaB.png" alt="bolsa bahia blanca">
-            </div>
-
-            <div class="col-6 col-md">
-                <img class="img-ban-org" src="../../../assets/images/logosOrganizadores/Clubleones.png" alt="club leones">
-            </div>
-            <div class="col-6 col-md">
-                <img class="img-ban-org" src="../../../assets/images/logosOrganizadores/MinisterioAgriculturaganaderia.png" alt="ministerio agricultura y ganaderia">
-            </div>
-            <div class="col-6 col-md-2">
-
-                <img class="img-ban-org" src="../../../assets/images/logosOrganizadores/Cordobaentretodos.png" alt="cordoba entre todos">
-            </div>
-            <div class="col-12 col-md-3">
-
-                <img class="img-ban-org" src="../../../assets/images/logosOrganizadores/Sociedadruraleones.png" alt="cordoba entre todos">
-            </div>
+        <div class="col col-md-12 text-center" style="padding: 5px;">
+            <h2 class="tit-logos"> Sponsors </h2>
         </div>
-    </div>
 
-    <!--BANNERS DIVIDIDOS-->
+        <ngx-slick-carousel id="carouselExampleControls" data-ride="carousel" class="carousel" #slickModal="slick-carousel" [config]="slideConfig" (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
 
-    <div class="d-flex flex-row justify-content-around">
 
-        <!-- SPONSORS -->
-        <div class="banner-sponsor">
-            <h2>SPONSORS</h2>
 
-            <div class="container">
+
+            <div class="nav-btn prev-slide slick-arrow" aria-disabled="false"></div>
+
+            <div ngxSlickItem *ngFor="let slide of slides" class="col slide">
+
+                <img src="../../../assets/images/sponsors/{{ slide.nombre }}.png" alt="carrusel" width="100%">
+
+            </div>
+            <div class="nav-btn next-slide slick-arrow" aria-disabled="false"></div>
+
+
+        </ngx-slick-carousel>
+
+        <!--BANNERS ORGANIZAN-->
+        <!-- titulos patern y org -->
+        <div class="container-fluid" style="margin-top: 25px;">
+            <div class="row">
+                <div class="col-2 col-md-2">
+                    <div>
+                        <h2 class="tit-logos text-center" style="margin-right: 40px;">Paterns</h2>
+                    </div>
+                </div>
+
+                <div class="col-10 col-md-10">
+                    <div style="padding: 5px;">
+                        <h2 class="tit-logos text-center">Organizan e invitan</h2>
+                    </div>
+                </div>
+
+                <!-- Logos paterns y organizan -->
+
                 <div class="row">
 
-                    <div class="col-6">
-
-                        <img src="../../../assets/images/logosOrganizadores/BolsaCerealesBahiaB.png" alt="bolsa bahia blanca">
-
+                    <div class="col-2 col-md-2">
+                        <img class="size-mo" src="../../../assets/images/patern/patern.png" alt="bolsa cereales cordoba">
                     </div>
 
-                    <div class="col-6">
 
-                        <img src="../../../assets/images/logosOrganizadores/Clubleones.png" alt="club leones">
+                    <div class="col-10 col-md-10 d-flex flex-md-row align-items-center justify-content-around">
 
+                        <div *ngFor="let image of images">
+
+                            <img class="size-mo" src="../../../assets/images/logosOrganizadores/{{image}}.png" alt="logos-organizadores">
+
+                        </div>
                     </div>
 
                 </div>
             </div>
-
         </div>
 
-        <!-- PATERNS -->
-        <div class="banner-pattern">
-            <h2>PATERNS</h2>
-            <img src="../../../assets/images/logosOrganizadores/BolsaCerealesBahiaB.png" alt="bolsa bahia blanca">
-            <img src="../../../assets/images/logosOrganizadores/Clubleones.png" alt="club leones">
+        <!--SPONSOR FIESTA NACIONAL-->
 
+        <div class="container-fluid" style="margin-top: 25px; padding-bottom: 15px;">
+            <div class="row">
+
+                <div class="col col-md-12 text-center" style="padding: 5px;">
+                    <h2 class="tit-logos"> Organizadores Oficiales </h2>
+                </div>
+
+
+                <div class="d-flex flex-md-row align-items-center">
+
+                    <div class="col col-md" *ngFor="let logo of logosOficiales">
+
+                        <img class="size-mo" src="../../../assets/images/logosOficiales/{{logo}}.png" alt="logos-oficiales">
+
+                    </div>
+
+                </div>
+
+            </div>
         </div>
 
-    </div>
 
+        <!-- CRONOGRAMA CON FOTOS -->
 
-    <!-- CRONOGRAMA CON FOTOS -->
-
-    <div class="fondo-crono-tri">
-
-        <!-- AGENDA Y SPEAKERS -->
-        <div class="d-flex justify-content-center">
+        <div class="fondo-crono-tri container-fluid">
 
             <img class="trigar-logo" src="../../../assets/images/logos/Trigar.png" alt="Trigar">
 
@@ -115,15 +128,15 @@
             <h2 class="titulo-agenda">Sábado 13 de febrero</h2>
         </div>
 
-        <div class="container contenedor-img-agenda-ft">
+        <div class="container contenedor-img-agenda-ft d-flex justify-content-center">
             <div class="row">
 
-                <div class="col-12 col-md-6">
-                    <img class="cronogramaimg" src=".../../../../../assets/images/agenda/cronograma-1-23.png" alt="cronograma1-23">
+                <div class="col-12 col-md-6 text-center">
+                    <img class="cronogramaimg" src=".../../../../../assets/images/agenda/cronogramaFNT1.png" alt="cronograma1-23">
                 </div>
 
-                <div class="col-12 col-md-6">
-                    <img class="cronogramaimg" src=".../../../../../assets/images/agenda/cronograma-1-24.png" alt="cronograma1-24">
+                <div class="col-12 col-md-6 text-center">
+                    <img class="cronogramaimg" src=".../../../../../assets/images/agenda/cronogramaFNT2.png" alt="cronograma1-24">
                 </div>
 
             </div>
@@ -131,7 +144,7 @@
     </div>
 
     <!-- INSTRUCCIONES PARA INGRESAR AL STREAM -->
-    <div class="container">
+    <div class="container inst-str">
         <div class="row">
 
             <h1 class="instrucciones-text">INSTRUCCIONES PARA INGRESAR AL STREAMING</h1>
