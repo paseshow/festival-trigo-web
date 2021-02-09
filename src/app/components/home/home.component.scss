@@ -229,6 +229,22 @@ $tamaño-tituloagenda: 25px;
     font-size: 20px;
 }
 
+.containerContacto {
+    padding-bottom: 50px;
+    background-color: $fondo-color;
+}
+
+.textRedesSociales {
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
+    text-align: center;
+}
+
+.logosImgRedes {
+    margin: 20px 0;
+}
+
 @media (max-width: 470px) {
     .img-ban-org {
         width: 85px;
