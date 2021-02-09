@@ -7,11 +7,13 @@
   </div>
 
 <!-- CARRUSEL -->
-<ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig" (init)="slickInit($event)"
-    (breakpoint)="breakpoint($event)" (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
-    <div ngxSlickItem *ngFor="let slide of slides" class="slide">
-      <img src="../../../assets/images/logosOrganizadores/{{slide}}.png" alt="carrusel" width="100%">
+<ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+    
+    <div ngxSlickItem *ngFor="let slide of slides" class="col slide">
+
+      <img src="../../../assets/images/sponsors/{{ slide.nombre }}.png" alt="carrusel" width="100%">
     </div>
+
   </ngx-slick-carousel>
 
 

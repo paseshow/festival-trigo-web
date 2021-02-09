@@ -37,9 +37,10 @@ $tamaño-tituloagenda: 25px;
 
 ///////////
 .slick-slider {
-  width: 60%;
+  width: 100%;
   margin: auto;
- // background: #000;
+  background-color: white;
+ 
 }
 
 .nav-btn {
@@ -57,12 +58,12 @@ $tamaño-tituloagenda: 25px;
 }
 
 .prev-slide {
-  background: url("../../../assets/images/logosOrganizadores/Clubleones.png") no-repeat scroll 0 0;
+  //background: url("assets/images/nav-icon.png") no-repeat scroll 0 0;
   left: -33px;
 }
 
 .next-slide {
-  background: url("../../../assets/images/logosOrganizadores/BolsaCerealesBahiaB.png") no-repeat scroll -24px 0px;
+ // background: url("assets/images/nav-icon.png") no-repeat scroll -24px 0px;
   right: -33px;
 }
 
