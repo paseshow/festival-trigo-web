@@ -21,35 +21,31 @@ export class HomeComponent implements OnInit {
   slideConfig = {
     "slidesToShow": 6,
     "slidesToScroll": 6,
-    "nextArrow": "<div class='nav-btn next-slide '></div>",
-    "prevArrow": "<div class='nav-btn prev-slide'></div>",
+    "nextArrow": "<div class='nav-btn next-slide prev-slide slick-arrow'></div>",
+    "prevArrow": "<div class='nav-btn prev-slide prev-slide slick-arrow'></div>",
     "dots": false,
     "infinite": true
   };
 
-  // addSlide() {
-  //   this.slides.push()
-  // }
 
-  // removeSlide() {
-  //   this.slides.length = this.slides.length - 1;
-  // }
+  afterChange(e) {
+    console.log('afterChange');
+  }
 
-  // slickInit(e) {
-  //   console.log('slick initialized');
-  // }
+  beforeChange(e) {
+    console.log('beforeChange');
+  }
 
-  // breakpoint(e) {
-  //   console.log('breakpoint');
-  // }
+  removeSlide() {
+    this.slides.length = this.slides.length - 1;
+  }
 
-  // afterChange(e) {
-  //   console.log('afterChange');
-  // }
+  slickInit(e) {
+    console.log('slick initialized');
+  }
 
-  // beforeChange(e) {
-  //   console.log('beforeChange');
-  // }
-
+  breakpoint(e) {
+    console.log('breakpoint');
+  }
   
 }

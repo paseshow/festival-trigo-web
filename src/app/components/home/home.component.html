@@ -6,31 +6,29 @@
       width="100%">
   </div>
 
+ 
   <!-- CARRUSEL -->
   <div class="contenedor-carrusel">
-    
+
     <div class="col col-md-12 text-center" style="padding: 5px;">
       <h2 class="tit-logos"> Sponsors </h2>
     </div>
 
     <ngx-slick-carousel id="carouselExampleControls" data-ride="carousel" class="carousel" #slickModal="slick-carousel"
-      [config]="slideConfig">
+      [config]="slideConfig" (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
 
+      
+
+      
+      <div class="nav-btn prev-slide slick-arrow" aria-disabled="false"></div>
 
       <div ngxSlickItem *ngFor="let slide of slides" class="col slide">
 
         <img src="../../../assets/images/sponsors/{{ slide.nombre }}.png" alt="carrusel" width="100%">
 
       </div>
+      <div class="nav-btn next-slide slick-arrow" aria-disabled="false"></div>
 
-      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
 
     </ngx-slick-carousel>
 
