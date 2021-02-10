@@ -45,7 +45,9 @@ export class HomeComponent implements OnInit {
   //   }
   // };
 
-  slides = [{nombre: "alcance", tamano: "100"},{nombre: "asoCoperatArg", tamano: "100"}, {nombre: "bancor", tamano: "100"}, {nombre: "bertoto", tamano: "100"}, {nombre: "capello", tamano: "100"}, {nombre: "contimix", tamano: "100"}, {nombre: "contingiani", tamano: "100"}, {nombre: "coperativaleones", tamano: "100"},{nombre: "fugran", tamano: "100"}, {nombre: "gastaldi", tamano: "100"}, {nombre: "leones2", tamano: "100"}, {nombre: "metalfor", tamano: "100"}, {nombre: "ministerioAgGan", tamano: "100"}, {nombre: "salas", tamano: "100"}, {nombre: "torregiani", tamano: "100"}, {nombre: "union100", tamano: "100"}, ];
+
+
+  slides = [{nombre: "bancor", tamano: "100"}, {nombre: "gastaldi", tamano: "100"}, {nombre: "fugran", tamano: "100"},  {nombre: "ministerioAgGan", tamano: "100"}, {nombre: "alcance", tamano: "100"},{nombre: "asoCoperatArg", tamano: "100"}, {nombre: "bertoto", tamano: "100"}, {nombre: "capello", tamano: "100"}, {nombre: "contimix", tamano: "100"}, {nombre: "contingiani", tamano: "100"}, {nombre: "coperativaleones", tamano: "100"},  {nombre: "leones2", tamano: "100"}, {nombre: "metalfor", tamano: "100"}, {nombre: "salas", tamano: "100"}, {nombre: "torregiani", tamano: "100"}, {nombre: "union100", tamano: "100"}, ];
 
   images = ["bcca", "bolsacereales", "bolsacerealesba", "cbatodos", "escudoleones", "logoleones"];
 
