@@ -1,5 +1,4 @@
-import { formatDate } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormularioIngreso } from 'src/app/models/formularios';
 import { FormulariosService } from 'src/app/services/formularios.service';

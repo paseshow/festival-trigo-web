@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-home',
@@ -11,8 +10,7 @@ export class HomeComponent implements OnInit {
   correo: any;
   nombre: any;
 
-  constructor(
-  ) { }
+  constructor() { }
 
   ngOnInit(): void {
     this.getFormulario();
