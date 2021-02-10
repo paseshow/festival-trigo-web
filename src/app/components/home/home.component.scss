@@ -239,7 +239,7 @@ $tamaño-tituloagenda: 25px;
 .textRedesSociales {
     color: white;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 17px;
     text-align: center;
 }
 
@@ -250,6 +250,17 @@ $tamaño-tituloagenda: 25px;
 .imgHistoria {
     width: 80%;
     text-align: center;
+}
+
+.imgStream {
+    max-width: 70px;
+    max-height: 70px;
+    margin: 0 auto !important;
+}
+
+.textStream {
+    color: white;
+    font-size: 17px !important;
 }
 
 @media (max-width: 470px) {
@@ -267,7 +278,7 @@ $tamaño-tituloagenda: 25px;
             font-size: 19px;
         }
         .trigar-logo {
-            width: 170px;
+            width: 220px;
         }
         & h2 {
             font-size: 19px;
@@ -296,6 +307,13 @@ $tamaño-tituloagenda: 25px;
     .tit-logos {
         font-size: 15px;
         margin: auto;
+    }
+    .imgStream {
+        max-width: 40px;
+        max-height: 40px;
+    }
+    .textStream {
+        font-size: 12px !important;
     }
 }
 

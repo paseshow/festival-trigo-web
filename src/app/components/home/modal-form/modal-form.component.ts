@@ -43,8 +43,11 @@ export class ModalFormComponent implements OnInit, AfterViewInit {
 
 
   ngAfterViewInit() {
-    this.myModal = document.getElementById('btnModal');
-    this.myModal.click();
+    if (localStorage.getItem("id") != "sakbcoaknle") {
+
+      this.myModal = document.getElementById('btnModal');
+      this.myModal.click();
+    }
 
     this.contador();
   }
@@ -55,8 +58,8 @@ export class ModalFormComponent implements OnInit, AfterViewInit {
   // correctamente, obtenemos los eventos que estan activos en el dia
   // ----------------------------------------------------------------
   onSubmit() {
-    this.submitted = true;
-    if (this.modalForm.valid) {
+
+    if (localStorage.getItem("id") != "sakbcoaknle") {
 
       const form = new FormularioIngreso();
 
@@ -70,6 +73,7 @@ export class ModalFormComponent implements OnInit, AfterViewInit {
       // guardamos el formulario y la respuesta del back, también guardamos el id del usuario.
       this.formularioInitService.addForm(form).subscribe(
         (resp: FormularioIngreso) => {
+          localStorage.setItem("id", 'sakbcoaknle');
           this.renderer.setAttribute(this.btnCloseModal.nativeElement, "data-bs-dismiss", "modal")
           this.btnCloseModal.nativeElement.click();
         }, error => {
