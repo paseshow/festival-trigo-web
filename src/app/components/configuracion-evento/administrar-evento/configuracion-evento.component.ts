@@ -19,6 +19,7 @@ export class ConfiguracionEventoComponent implements OnInit {
   modal_title: string;
 
   listEventos: Eventoes[];
+  linksEventos: String[];
 
   constructor(
     private fb: FormBuilder,
@@ -26,6 +27,8 @@ export class ConfiguracionEventoComponent implements OnInit {
   ) {
     this.tituloModal = 'Agregar evento';
     this.listEventos = [];
+    this.linksEventos = [];
+
   }
 
   ngOnInit(): void {
@@ -65,15 +68,29 @@ export class ConfiguracionEventoComponent implements OnInit {
   // @params: evento para editar
   //------------------------------------
   editEvent(): void {
-    if (this.modal_title == "Nuevo Evento") {
-      this.eventoesService.newEvent(this.formNewEvent).subscribe(
-        (next) => {
-          this.loadEvents();
-          this.btnModal.nativeElement.click();
-        }, error => {
 
-        }
-      )
+    //  cuando se crea un nuevo evento, otenemos el codigo del link de youtube
+    if (this.modal_title == "Nuevo Evento") {
+      let codigo: string = this.formNewEvent.get("linkEvento").value;
+      let indice: any = this.formNewEvent.get("linkEvento").value;
+
+      indice = codigo.indexOf("?v=", 0);
+      let indiceA = codigo.indexOf("&", 0);
+
+      if (indice > 0) {
+        codigo = indiceA != -1 ? codigo.substring(indice + 3, indiceA) : codigo.substring(indice + 3, codigo.length);
+        codigo = 'https://www.youtube.com/watch?v=' + codigo;
+        this.formNewEvent.controls['linkEvento'].setValue(codigo);
+        this.eventoesService.newEvent(this.formNewEvent).subscribe(
+          (next) => {
+            this.loadEvents();
+            this.btnModal.nativeElement.click();
+          }, error => {
+
+          }
+        )
+      }
+
     } else {
       this.eventoesService.updateEvent(this.formNewEvent).subscribe(
         next => {
@@ -97,6 +114,7 @@ export class ConfiguracionEventoComponent implements OnInit {
         this.modal_title = "Nuevo Evento"
 
         this.formNewEvent.setValue({
+          id: '',
           nameEvent: '',
           linkEvent: '',
           fechaEvento: '',
