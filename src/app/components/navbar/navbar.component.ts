@@ -66,8 +66,8 @@ export class NavbarComponent implements OnInit, OnChanges, AfterViewChecked {
         }
     };
 
-    smmoothScroll(){
-        console.log("hi")
+    smmoothScroll(seccion: string): void {
+        document.getElementById(`${seccion}`).scrollIntoView();
     }
 
     //-----------------------------------------------------------
