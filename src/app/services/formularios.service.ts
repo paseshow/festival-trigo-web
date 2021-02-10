@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { take } from 'rxjs/operators';
-import { Observable } from 'rxjs';
-import { Formularios } from '../models/formularios';
+import { FormularioIngreso } from '../models/formularios';
 
 @Injectable({ providedIn: 'root' })
 export class FormulariosService {
@@ -16,6 +15,10 @@ export class FormulariosService {
 
     getReporteFormularios() {
         return this.http.get(environment.apiUrl + this.endpoint + 'export/listado').pipe(take(1));
+    };
+
+    addForm(form: FormularioIngreso) {
+        return this.http.post(environment.apiUrl + this.endpoint + 'add', JSON.stringify(form)).pipe(take(1));
     }
 
 }

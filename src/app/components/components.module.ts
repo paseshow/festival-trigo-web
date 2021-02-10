@@ -3,11 +3,14 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { PlyrModule } from 'ngx-plyr';
 import { RouterModule } from '@angular/router';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { ComponentRoutes } from './components.routing';
-
 // COMPONENTES ---------------------------------------------
 import { HomeComponent } from './home/home.component';
 import { StreamingComponent } from './streaming/streaming.component';
+import { ModalFormComponent } from './home/modal-form/modal-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -15,11 +18,15 @@ import { StreamingComponent } from './streaming/streaming.component';
         RouterModule.forChild(ComponentRoutes),
         PlyrModule,
         CommonModule,
+        SlickCarouselModule,
+        ReactiveFormsModule
+
     ],
     exports: [],
     declarations: [
         HomeComponent,
-        StreamingComponent
+        StreamingComponent,
+        ModalFormComponent
     ],
     providers: [],
 })

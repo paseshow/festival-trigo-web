@@ -4,3 +4,10 @@ export class Formularios {
     apellido: string;
     correo: string;
 }
+
+export class FormularioIngreso {
+    nombre: string;
+    apellido: string;
+    telefono: string;
+    correo: string;
+}
