@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Eventoes } from 'src/app/models/eventoes';
 import { CommonService } from 'src/app/services/common.service';
 import { EventoesService } from 'src/app/services/eventoes.service';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
 @Component({
     selector: 'app-navbar',
@@ -65,6 +65,10 @@ export class NavbarComponent implements OnInit, OnChanges, AfterViewChecked {
                 break;
         }
     };
+
+    smmoothScroll(seccion: string): void {
+        document.getElementById(`${seccion}`).scrollIntoView();
+    }
 
     //-----------------------------------------------------------
     // Antes de redirigir al stream, validamos la fecha y la hora
