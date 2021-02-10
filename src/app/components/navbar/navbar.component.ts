@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { AfterViewChecked, Component, Input, OnChanges, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Eventoes } from 'src/app/models/eventoes';
+import { CommonService } from 'src/app/services/common.service';
 import { EventoesService } from 'src/app/services/eventoes.service';
 import Swal from 'sweetalert2';
 
@@ -10,7 +11,7 @@ import Swal from 'sweetalert2';
     styleUrls: ['./navbar.component.scss']
 })
 
-export class NavbarComponent implements OnInit {
+export class NavbarComponent implements OnInit, OnChanges, AfterViewChecked {
 
     userAdmin: boolean;
     sesion: string;
@@ -20,7 +21,8 @@ export class NavbarComponent implements OnInit {
 
     constructor(
         private route: Router,
-        private eventoesService: EventoesService
+        private eventoesService: EventoesService,
+        private commonService: CommonService
     ) {
         this.userAdmin = false;
         this.sesion = 'Iniciar';
@@ -37,6 +39,10 @@ export class NavbarComponent implements OnInit {
         }
     };
 
+    ngAfterViewChecked(): void {
+        this.sesion = this.commonService.getSesion();
+    }
+
     //------------------------------------------------------
     // Metodo para detectar la seleccion de items del navbar
     // @params: seccionSeleccionada
@@ -52,6 +58,7 @@ export class NavbarComponent implements OnInit {
             case 'sesion':
                 if (this.sesion == 'Cerrar') {
                     localStorage.clear();
+                    this.commonService.setSesion('Iniciar');
                     this.sesion = 'Iniciar';
                 }
                 this.route.navigate(['/configuracionEvento']);
