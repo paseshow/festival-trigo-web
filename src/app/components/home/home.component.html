@@ -6,7 +6,7 @@
       width="100%">
   </div>
 
- 
+
   <!-- CARRUSEL -->
   <div class="contenedor-carrusel">
 
@@ -14,161 +14,153 @@
       <h2 class="tit-logos"> Sponsors </h2>
     </div>
 
-    <ngx-slick-carousel id="carouselExampleControls" data-ride="carousel" class="carousel" #slickModal="slick-carousel"
-      [config]="slideConfig" (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
+    <div class="col-md-12">
+      <div *ngFor="let slide of slides" class="slide">
 
-      
-
-      
-      <div class="nav-btn prev-slide slick-arrow" aria-disabled="false"></div>
-
-      <div ngxSlickItem *ngFor="let slide of slides" class="col slide">
-
-        <img src="../../../assets/images/sponsors/{{ slide.nombre }}.png" alt="carrusel" width="100%">
+        <img class="logos-carrusel" src="../../../assets/images/sponsors/{{ slide.nombre }}.png" alt="carrusel">
 
       </div>
-      <div class="nav-btn next-slide slick-arrow" aria-disabled="false"></div>
+    </div>
 
+  </div>
 
-    </ngx-slick-carousel>
+  <!--BANNERS ORGANIZAN-->
+  <!-- titulos patern y org -->
+  <div class="container-fluid" style="margin-top: 25px; padding-top: 10px;">
+    <div class="row">
+      <div class="col-2 col-md-2">
+        <div>
+          <h2 class="tit-logos text-center">Paterns</h2>
+        </div>
+      </div>
 
-    <!--BANNERS ORGANIZAN-->
-    <!-- titulos patern y org -->
-    <div class="container-fluid" style="margin-top: 25px;">
+      <div class="col-10 col-md-10">
+        <div style="padding: 5px;">
+          <h2 class="tit-logos text-center">Organizan e invitan</h2>
+        </div>
+      </div>
+
+      <!-- Logos paterns y organizan -->
+
       <div class="row">
+
         <div class="col-2 col-md-2">
-          <div>
-            <h2 class="tit-logos text-center" style="margin-right: 40px;">Paterns</h2>
-          </div>
-        </div>
-
-        <div class="col-10 col-md-10">
-          <div style="padding: 5px;">
-            <h2 class="tit-logos text-center">Organizan e invitan</h2>
-          </div>
-        </div>
-
-        <!-- Logos paterns y organizan -->
-
-        <div class="row">
-
-          <div class="col-2 col-md-2">
-            <img class="size-mo" src="../../../assets/images/patern/patern.png" alt="bolsa cereales cordoba">
-          </div>
-
-
-          <div class="col-10 col-md-10 d-flex flex-md-row align-items-center justify-content-around">
-
-            <div *ngFor="let image of images">
-
-              <img class="size-mo" src="../../../assets/images/logosOrganizadores/{{image}}.png"
-                alt="logos-organizadores">
-
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <!--SPONSOR FIESTA NACIONAL-->
-
-    <div class="container-fluid" style="margin-top: 25px; padding-bottom: 15px;">
-      <div class="row">
-
-        <div class="col col-md-12 text-center" style="padding: 5px;">
-          <h2 class="tit-logos"> Organizadores Oficiales </h2>
+          <img class="logo-patern" src="../../../assets/images/patern/patern.png" alt="logo-patern-agricultura">
         </div>
 
 
-        <div class="d-flex flex-md-row align-items-center">
+        <div class="col-10 col-md-10 d-flex flex-md-row align-items-center justify-content-around clase-posicion">
 
-          <div class="col col-md" *ngFor="let logo of logosOficiales">
+          <div *ngFor="let image of images">
 
-            <img class="size-mo" src="../../../assets/images/logosOficiales/{{logo}}.png" alt="logos-oficiales">
+            <img class="size-mo" src="../../../assets/images/logosOrganizadores/{{image}}.png"
+              alt="logos-organizadores">
 
           </div>
-
-        </div>
-
-      </div>
-    </div>
-
-  </div>
-
-  <!-- CRONOGRAMA CON FOTOS -->
-
-  <div class="fondo-crono-tri container-fluid">
-
-    <!-- AGENDA Y SPEAKERS -->
-    <div class="d-flex justify-content-center ">
-
-      <img class="trigar-logo" src="../../../assets/images/logos/Trigar.png" alt="Trigar">
-
-    </div>
-
-    <div class="container">
-      <div class="row">
-
-        <div class="col col-md-6">
-          <h2 class="titulo-agenda"> Jueves 11 Febrero</h2>
-          <img class="cronogramaimg" src="../.../../../../assets/images/agenda/cronograma-1.png" alt="cronograma1">
-          <img class="cronogramaimg" src="../../../assets/images/agenda/Cronograma-2.png" alt="">
-        </div>
-
-        <div class="col col-md-6">
-          <h2 class="titulo-agenda"> Viernes 12 Febrero</h2>
-          <img class="cronogramaimg" src="../../../assets/images/agenda/cronograma-3.png" alt="">
-        </div>
-
-
-      </div>
-    </div>
-  </div>
-
-
-  <!-- CRONOGRAMA CON TRIGUITOS -->
-  <div class="fondo-crono-ft">
-
-    <div class="contenedor-agenda-logo">
-      <img src="../../../assets/images/logos/Fiestanacionaltrigo.png" alt="fiesta nacional del trigo" width=" 310px">
-      <h2 class="titulo-agenda">Sábado 13 de febrero</h2>
-    </div>
-
-    <div class="container contenedor-img-agenda-ft d-flex justify-content-center">
-      <div class="row">
-
-        <div class="col-12 col-md-6 text-center">
-          <img class="cronogramaimg" src=".../../../../../assets/images/agenda/cronogramaFNT1.png" alt="cronograma1-23">
-        </div>
-
-        <div class="col-12 col-md-6 text-center">
-          <img class="cronogramaimg" src=".../../../../../assets/images/agenda/cronogramaFNT2.png" alt="cronograma1-24">
         </div>
 
       </div>
     </div>
   </div>
 
-  <!-- INSTRUCCIONES PARA INGRESAR AL STREAM -->
-  <div class="container inst-str">
+  <!--SPONSOR FIESTA NACIONAL-->
+
+  <div class="container-fluid" style="margin-top: 25px; padding-bottom: 15px;">
     <div class="row">
 
-      <h1 class="instrucciones-text">INSTRUCCIONES PARA INGRESAR AL STREAMING</h1>
-
-      <div class="icon-stream">
-        <i class="bi bi-display"></i>
-
-      </div>
-
-      <div class="boton-contenedor">
-        <button class="boton-ing-str" type="button">Ir al Streaming</button>
+      <div class="col col-md-12 text-center" style="padding: 5px;">
+        <h2 class="tit-logos"> Organizadores Oficiales </h2>
       </div>
 
 
+      <div class="d-flex flex-md-row align-items-center">
+
+        <div class="col col-md" *ngFor="let logo of logosOficiales">
+
+          <img class="size-mo" src="../../../assets/images/logosOficiales/{{logo}}.png" alt="logos-oficiales">
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- CRONOGRAMA CON FOTOS -->
+
+<div class="fondo-crono-tri container-fluid">
+
+  <!-- AGENDA Y SPEAKERS -->
+  <div class="d-flex justify-content-center ">
+
+    <img class="trigar-logo" src="../../../assets/images/logos/Trigar.png" alt="Trigar">
+
+  </div>
+
+  <div class="container">
+    <div class="row">
+
+      <div class="col col-md-6">
+        <h2 class="titulo-agenda"> Jueves 11 Febrero</h2>
+        <img class="cronogramaimg" src="../.../../../../assets/images/agenda/cronograma-1.png" alt="cronograma1">
+        <img class="cronogramaimg" src="../../../assets/images/agenda/Cronograma-2.png" alt="">
+      </div>
+
+      <div class="col col-md-6">
+        <h2 class="titulo-agenda"> Viernes 12 Febrero</h2>
+        <img class="cronogramaimg" src="../../../assets/images/agenda/cronograma-3.png" alt="">
+      </div>
 
 
     </div>
-    <!-- finRow -->
   </div>
-  <!-- finContainer -->
+</div>
+
+
+<!-- CRONOGRAMA CON TRIGUITOS -->
+<div class="fondo-crono-ft">
+
+  <div class="contenedor-agenda-logo">
+    <img src="../../../assets/images/logos/Fiestanacionaltrigo.png" alt="fiesta nacional del trigo" width=" 310px">
+    <h2 class="titulo-agenda">Sábado 13 de febrero</h2>
+  </div>
+
+  <div class="container contenedor-img-agenda-ft d-flex justify-content-center">
+    <div class="row">
+
+      <div class="col-12 col-md-6 text-center">
+        <img class="cronogramaimg" src=".../../../../../assets/images/agenda/cronogramaFNT1.png" alt="cronograma1-23">
+      </div>
+
+      <div class="col-12 col-md-6 text-center">
+        <img class="cronogramaimg" src=".../../../../../assets/images/agenda/cronogramaFNT2.png" alt="cronograma1-24">
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- INSTRUCCIONES PARA INGRESAR AL STREAM -->
+<div class="container inst-str">
+  <div class="row">
+
+    <h1 class="instrucciones-text">INSTRUCCIONES PARA INGRESAR AL STREAMING</h1>
+
+    <div class="icon-stream">
+      <i class="bi bi-display"></i>
+
+    </div>
+
+    <div class="boton-contenedor">
+      <button class="boton-ing-str" type="button">Ir al Streaming</button>
+    </div>
+
+
+
+
+  </div>
+  <!-- finRow -->
+</div>
+<!-- finContainer -->
