@@ -3,7 +3,7 @@ $texto-color: white;
 $streaming-color: #e3c06c;
 $fondo-grisclaro: #707070;
 $tamaño-texto: 18px;
-$tamaño-tituloagenda: 25px;
+$tamaño-tituloagenda: 27px;
 
 .cuerpo-home {
   background-color: $fondo-color;
@@ -222,6 +222,7 @@ $tamaño-tituloagenda: 25px;
   color: $streaming-color;
   font-size: 40px;
   text-align: center;
+  margin-bottom: 15px;
 }
 
 .boton-contenedor {
@@ -244,7 +245,8 @@ $tamaño-tituloagenda: 25px;
 }
 
 .tit-logos {
-  font-size: 20px;
+  font-size: 24px;
+  margin-bottom: 5px;
 }
 
 @media (max-width: 470px) {
@@ -280,7 +282,7 @@ $tamaño-tituloagenda: 25px;
   }
 
   .trigar-logo {
-    width: 170px;
+    width: 180px;
   }
 
   .cronogramaimg {
@@ -289,11 +291,12 @@ $tamaño-tituloagenda: 25px;
   }
 
   .titulo-agenda {
-    font-size: 17px;
+    font-size: 21px;
   }
 
   .instrucciones-text {
     font-size: 20px;
+    
   }
 
   .boton-ing-str {
@@ -308,7 +311,7 @@ $tamaño-tituloagenda: 25px;
   }
 
   .tit-logos {
-    font-size: 15px;
+    font-size: 18px;
     margin: auto;
   }
 
