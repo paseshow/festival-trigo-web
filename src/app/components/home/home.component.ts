@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -7,12 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  @ViewChild("cuerpoHtml", { static: false }) cuerpoHtml: ElementRef;
+
   correo: any;
   nombre: any;
+  isMobile: boolean;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.isMobile = false;
     this.getFormulario();
   }
 
@@ -31,6 +35,14 @@ export class HomeComponent implements OnInit {
     "infinite": true
   };
 
+  ngAfterViewChecked(): void {
+    let a = this.cuerpoHtml.nativeElement.offsetWidth;
+
+    if (a <= 466) {
+      this.isMobile = true;
+    }
+
+  }
 
   afterChange(e) {
     console.log('afterChange');
@@ -55,4 +67,6 @@ export class HomeComponent implements OnInit {
   getFormulario(): void {
 
   }
+
+
 }

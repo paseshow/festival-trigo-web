@@ -1,5 +1,5 @@
 <app-modal-form></app-modal-form>
-<div class="cuerpo-home">
+<div #cuerpoHtml class="cuerpo-home">
 
     <!-- SLIDER -->
     <section id="inicio">
@@ -137,8 +137,62 @@
     </div>
 
     <section id="historia">
-        <div class="container mx-auto d-flex justify-content-center">
+        <div *ngIf="!isMobile" class="container mx-auto d-flex justify-content-center">
             <img class="imgHistoria " src="../../../assets/images/fondo/Historia.png">
+        </div>
+
+        <div *ngIf="isMobile" class="container mx-auto d-flex justify-content-center">
+            <img class="imgHistoria " src="../../../assets/images/Historia/titile.png" width="100%">
+        </div>
+
+        <div *ngIf="isMobile" class="container containerHistoria p-0">
+            <p class="textHistoria text-break">La Fiesta Nacional del Trigo es una de las festividades más antiguas del país. Este mega evento que se realiza cada año desde 1947 es una oportunidad de festejo para toda la familia donde el trigo es protagonista.</p>
+
+            <div class="container p-0">
+                <img class="imgHistoria " src="../../../assets/images/Historia/semillas.png" width="80%">
+                <div class="rectangulo"></div>
+            </div>
+
+        </div>
+
+        <div *ngIf="isMobile" class="container containerHistoria p-0 mt-3">
+            <p class="textHistoria text-break">Organizada en la localidad de Leones, Capital Nacional del Trigo.</p>
+
+            <div class="container p-0">
+                <img class="imgHistoria " src="../../../assets/images/Historia/fase1.png" width="80%">
+                <div class="rectangulo"></div>
+            </div>
+
+        </div>
+
+        <div *ngIf="isMobile" class="container containerHistoria p-0 mt-3">
+            <p class="textHistoria text-break">Este encuentro luego se declaró Fiesta Nacional en 1956 y constituye una de las conmemoraciones más tradicionales a los productores de este reconocido cereal.</p>
+
+            <div class="container p-0">
+                <img class="imgHistoria " src="../../../assets/images/Historia/fase2.png" width="80%">
+                <div class="rectangulo"></div>
+            </div>
+
+        </div>
+
+        <div *ngIf="isMobile" class="container containerHistoria p-0 mt-3">
+            <p class="textHistoria text-break">En cada edición, ofrece un marco propicio para desarrollar jornadas trigueras nacionales y jornadas técnicas. A su vez, se realizan concursos nacionales de muestras de trigo y el clásico desfile de carrozas, alegorías y maquinarias.</p>
+
+            <div class="container p-0">
+                <img class="imgHistoria " src="../../../assets/images/Historia/fase3.png" width="80%">
+                <div class="rectangulo"></div>
+            </div>
+
+        </div>
+
+        <div *ngIf="isMobile" class="container containerHistoria p-0 mt-3">
+            <p class="textHistoria text-break">Por su parte, este evento incluye la elección y coronación de la Reina Nacional del Trigo. Además, sobre sus escenarios se despliegan shows musicales y espectáculos artísticos durante las diversas jornadas.</p>
+
+            <div class="container p-0">
+                <img class="imgHistoria " src="../../../assets/images/Historia/fase4.png" width="80%">
+                <div class="rectangulo"></div>
+            </div>
+
         </div>
     </section>
 
