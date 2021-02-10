@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   //apiUrl: "http://localhost:8080/"
-  apiUrl: "https://festival-api-test.herokuapp.com/"
+  apiUrl: "https://test-festival-trigar-api.herokuapp.com/"
 };
 
 /*
