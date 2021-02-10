@@ -19,7 +19,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let unEvento of listEventos">
+            <tr *ngFor="let unEvento of listEventos, let i = indice">
                 <td>{{unEvento.nameEvento}}</td>
                 <td>{{unEvento.linkEvento}}</td>
                 <td>{{unEvento.active ? 'Si' : 'No'}}</td>

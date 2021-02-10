@@ -7,7 +7,7 @@ import { FormularioIngreso } from '../models/formularios';
 @Injectable({ providedIn: 'root' })
 export class FormulariosService {
 
-    endpoint = "formularios/";
+    endpoint = "Formularios/";
 
     constructor(
         private http: HttpClient
