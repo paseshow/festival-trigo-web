@@ -10,6 +10,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AuthHttpInterceptor } from './services/auth-http.interceptor';
+import { CommonService } from './services/common.service';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { AuthHttpInterceptor } from './services/auth-http.interceptor';
 
   ],
   providers: [
+    CommonService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthHttpInterceptor,

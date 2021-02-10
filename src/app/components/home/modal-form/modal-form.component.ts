@@ -1,5 +1,5 @@
 import { formatDate } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormularioIngreso } from 'src/app/models/formularios';
 import { FormulariosService } from 'src/app/services/formularios.service';
@@ -11,7 +11,10 @@ import { FormulariosService } from 'src/app/services/formularios.service';
 })
 export class ModalFormComponent implements OnInit, AfterViewInit {
 
-  modalForm: FormGroup
+  @ViewChild("btnCloseModal", { static: false }) btnCloseModal: ElementRef;
+
+  modalNot: boolean;
+  modalForm: FormGroup;
   submitted = false;
   buttonCloseModal: any;
   myModal: any;
@@ -19,7 +22,8 @@ export class ModalFormComponent implements OnInit, AfterViewInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private formularioInitService: FormulariosService
+    private formularioInitService: FormulariosService,
+    private renderer: Renderer2
   ) {
     this.noEsHora = true;
   }
@@ -27,7 +31,7 @@ export class ModalFormComponent implements OnInit, AfterViewInit {
   get fm() { return this.modalForm.controls; }
 
   ngOnInit(): void {
-
+    this.modalNot = false;
     this.modalForm = this.formBuilder.group({
       nombre: ['', Validators.required],
       apellido: ['', Validators.required],
@@ -39,8 +43,11 @@ export class ModalFormComponent implements OnInit, AfterViewInit {
 
 
   ngAfterViewInit() {
-    var myModal = document.getElementById('btnModal');
-    myModal.click();
+    if (localStorage.getItem("id") != "sakbcoaknle") {
+
+      this.myModal = document.getElementById('btnModal');
+      this.myModal.click();
+    }
 
     this.contador();
   }
@@ -51,8 +58,8 @@ export class ModalFormComponent implements OnInit, AfterViewInit {
   // correctamente, obtenemos los eventos que estan activos en el dia
   // ----------------------------------------------------------------
   onSubmit() {
-    this.submitted = true;
-    if (this.modalForm.valid) {
+
+    if (localStorage.getItem("id") != "sakbcoaknle") {
 
       const form = new FormularioIngreso();
 
@@ -61,11 +68,16 @@ export class ModalFormComponent implements OnInit, AfterViewInit {
       form.correo = this.modalForm.get("email").value;
       form.telefono = this.modalForm.get("phone").value;
 
+      this.modalNot = true;
+
       // guardamos el formulario y la respuesta del back, también guardamos el id del usuario.
-      // this.formularioInitService.addForm(form).subscribe(
-      //   (resp: FormularioIngreso) => {
-      //   }, error => {
-      //   });
+      this.formularioInitService.addForm(form).subscribe(
+        (resp: FormularioIngreso) => {
+          localStorage.setItem("id", 'sakbcoaknle');
+          this.renderer.setAttribute(this.btnCloseModal.nativeElement, "data-bs-dismiss", "modal")
+          this.btnCloseModal.nativeElement.click();
+        }, error => {
+        });
 
     }
   };

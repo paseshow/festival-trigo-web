@@ -121,6 +121,8 @@ $tamaño-tituloagenda: 25px;
 }
 
 .fondo-crono-tri {
+    padding-top: 90px;
+    text-align: center;
     background-repeat: repeat-x;
     background-image: url("../../../assets/images/fondo/trama-gris-de-fondo.png");
     background-color: #393939;
@@ -190,7 +192,7 @@ $tamaño-tituloagenda: 25px;
 
 ///////////
 .trigar-logo {
-    width: 290px;
+    width: 350px;
 }
 
 .cronogramaimg {
@@ -237,12 +239,28 @@ $tamaño-tituloagenda: 25px;
 .textRedesSociales {
     color: white;
     font-weight: bold;
-    font-size: 22px;
+    font-size: 17px;
     text-align: center;
 }
 
 .logosImgRedes {
     margin: 20px 0;
+}
+
+.imgHistoria {
+    width: 80%;
+    text-align: center;
+}
+
+.imgStream {
+    max-width: 70px;
+    max-height: 70px;
+    margin: 0 auto !important;
+}
+
+.textStream {
+    color: white;
+    font-size: 17px !important;
 }
 
 @media (max-width: 470px) {
@@ -260,7 +278,7 @@ $tamaño-tituloagenda: 25px;
             font-size: 19px;
         }
         .trigar-logo {
-            width: 170px;
+            width: 220px;
         }
         & h2 {
             font-size: 19px;
@@ -270,7 +288,7 @@ $tamaño-tituloagenda: 25px;
         width: 170px;
     }
     .cronogramaimg {
-        width: 310px;
+        width: 320px;
     }
     .titulo-agenda {
         font-size: 17px;
@@ -289,5 +307,18 @@ $tamaño-tituloagenda: 25px;
     .tit-logos {
         font-size: 15px;
         margin: auto;
+    }
+    .imgStream {
+        max-width: 40px;
+        max-height: 40px;
+    }
+    .textStream {
+        font-size: 12px !important;
+    }
+}
+
+@media (max-width:999px) {
+    .cronogramaimg {
+        max-width: 360px;
     }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import * as Plyr from "plyr";
+import { EventoesService } from 'src/app/services/eventoes.service';
 
 @Component({
   selector: 'app-streaming',
@@ -10,13 +11,14 @@ import * as Plyr from "plyr";
 export class StreamingComponent implements OnInit {
 
   dataSetup: any;
-
+  url: string = '';
   opcionesReproductor: Plyr.Options;
   reproductor: Plyr;
   sourceVideo: Plyr.Source[];
 
   constructor(
     private sanitizationService: DomSanitizer,
+    private eventoesService: EventoesService
   ) {
     this.reproductor = new Plyr("#player");
     this.opcionesReproductor = {
@@ -29,13 +31,14 @@ export class StreamingComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.comienzaStream();
+    this.eventActive();
   }
 
   //---------------------------
   // Inicializamos stream
   //---------------------------
   comienzaStream(controles?: string[]) {
+
     this.opcionesReproductor = {
       clickToPlay: true,
       fullscreen: { enabled: true, fallback: true, iosNative: false },
@@ -61,7 +64,7 @@ export class StreamingComponent implements OnInit {
 
     this.sourceVideo = [
       {
-        src: "gOCBOiqbU0c",
+        src: `${this.url}`,
         provider: "youtube",
       },
     ];
@@ -72,5 +75,29 @@ export class StreamingComponent implements OnInit {
   //----------------------------------
   played(event: Plyr.PlyrEvent) {
   };
+
+  //-------------------------------------
+  // traemos evento activo
+  //-------------------------------------
+  eventActive() {
+
+    this.eventoesService.getEventosActivos().subscribe(
+      next => {
+        let fechaHoy: any = Date.now();
+
+        next.forEach(unEvento => {
+          if (Date.parse(unEvento.fechaEvento) < fechaHoy) {
+            let indice = unEvento.linkEvento.indexOf("?v=", 0);
+            let indiceA = unEvento.linkEvento.indexOf("&", 0);
+            this.url = indiceA != -1 ? unEvento.linkEvento.substring(indice + 3, indiceA) : unEvento.linkEvento.substring(indice + 3, unEvento.linkEvento.length);
+            this.comienzaStream();
+
+          }
+
+        });
+      }, error => {
+
+      });
+  }
 
 }

@@ -1,3 +1,16 @@
+.logo-ftn-nav{
+    width: 218px;
+    margin-left: 10px;
+    margin-bottom: 2px;
+}
+
+.logo-trigar-nav{
+    width: 180px;
+    margin-left: 10px;
+    position: relative;
+    top: 10px;
+}
+
 @media (max-width: 986px) {
     .nav-item {
         padding: 0 15px;
@@ -6,5 +19,18 @@
         padding: 0;
         margin: 0;
         width: 0%;
+    }
+}
+@media (max-width: 470px ){
+
+    .logo-ftn-nav{
+        width: 137px;
+        margin-left: 8px;
+    }
+
+    .logo-trigar-nav{
+        width: 110px;
+        margin-left: 18px;
+
     }
 }
