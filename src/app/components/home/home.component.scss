@@ -10,7 +10,7 @@ $tamaño-tituloagenda: 27px;
   overflow-x: hidden;
 }
 
-.logos-carrusel{
+.logos-carrusel {
   width: 100%;
 }
 
@@ -22,15 +22,12 @@ $tamaño-tituloagenda: 27px;
   text-align: center;
 }
 
-
 .img-ban-org {
   width: 100px;
-
 }
 
 .img-ban-org-rec {
   width: 170px;
-
 }
 
 .fondo-bn-org {
@@ -126,6 +123,8 @@ $tamaño-tituloagenda: 27px;
 }
 
 .fondo-crono-tri {
+  padding-top: 90px;
+  text-align: center;
   background-repeat: repeat-x;
   background-image: url("../../../assets/images/fondo/trama-gris-de-fondo.png");
   background-color: #393939;
@@ -163,8 +162,7 @@ $tamaño-tituloagenda: 27px;
 ////////////////////////////////
 
 .trigar-logo {
-  width: 290px;
-
+  width: 350px;
 }
 
 .cronogramaimg {
@@ -198,31 +196,87 @@ $tamaño-tituloagenda: 27px;
   width: 250px;
   height: 55px;
   font-size: large;
-
 }
 
 .tit-logos {
   font-size: 24px;
-  margin-bottom: 5px;
+  text-align: center;
 }
 
-.logo-patern{
-  width: 98%
+.logo-patern {
+  width: 210px;
 }
 
-.clase-posicion{
+.clase-posicion {
   position: static;
   left: unset;
   padding-right: unset;
 
 }
 
+.grid-div-img{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  padding-top: 10px;
+}
+
+/////
+//////////
+.grid-logos-org {
+  display: grid;
+  grid-template-columns: 0.5fr 2.5fr;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+    "patern org"
+    "logo-patern logos-org";
+    
+}
+
+.patern-title { grid-area: patern;}
+.org-title { grid-area: org;}
+
+.logo-patern-div { 
+  grid-template-columns: 1fr;
+  grid-area: logo-patern; }
+
+.logos-org-div {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-area: logos-org;
+  align-items: center;
+}
+
 
 @media (max-width: 470px) {
 
+  .grid-div-img{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
   .img-ban-org {
     width: 85px;
+  }
 
+  .textRedesSociales {
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .logosImgRedes {
+    margin: 20px 0;
+  }
+
+  .imgHistoria {
+    width: 80%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 470px) {
+  .img-ban-org {
+    width: 85px;
   }
 
   .img-ban-org-rec {
@@ -230,7 +284,6 @@ $tamaño-tituloagenda: 27px;
   }
 
   .banner-pattern {
-
     & img {
       max-width: 120px;
     }
@@ -238,11 +291,9 @@ $tamaño-tituloagenda: 27px;
     & h2 {
       font-size: 19px;
     }
-  }
 
-  .banner-sponsor {
-    & img {
-      max-width: 120px;
+    .trigar-logo {
+      width: 170px;
     }
 
     & h2 {
@@ -251,21 +302,19 @@ $tamaño-tituloagenda: 27px;
   }
 
   .trigar-logo {
-    width: 180px;
+    width: 170px;
   }
 
   .cronogramaimg {
-    width: 310px;
-
+    width: 320px;
   }
 
   .titulo-agenda {
-    font-size: 21px;
+    font-size: 17px;
   }
 
   .instrucciones-text {
     font-size: 20px;
-    
   }
 
   .boton-ing-str {
@@ -274,33 +323,20 @@ $tamaño-tituloagenda: 27px;
     font-size: large;
   }
 
-
   .size-mo {
-    width: 100%;
-  }
-
-  .clase-posicion{
-
-    position: relative;
-    left: 16px;
-    padding-right: 1px;
-
+    width: 80%;
   }
 
   .tit-logos {
-    font-size: 18px;
-    margin: auto;
+    font-size: 15px;
+    
   }
-
-  .logos-carrusel{
-    width: 110%;
-  }
-
-  .logo-patern{
-
-    width: 180%;
-
-  }
-  
-
 }
+
+@media (max-width:999px) {
+  .cronogramaimg {
+    max-width: 360px;
+  }
+}
+
+;

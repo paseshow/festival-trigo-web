@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container paddingTop">
     <p class="fs-1">Eventos:</p>
     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="modalTitle('agregar')">Agregar
         +</button>
@@ -19,7 +19,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let unEvento of listEventos">
+            <tr *ngFor="let unEvento of listEventos, let i = indice">
                 <td>{{unEvento.nameEvento}}</td>
                 <td>{{unEvento.linkEvento}}</td>
                 <td>{{unEvento.active ? 'Si' : 'No'}}</td>

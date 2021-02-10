@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Formularios } from 'src/app/models/formularios';
 import { FormulariosService } from 'src/app/services/formularios.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-reportes',
@@ -13,6 +14,7 @@ export class ReportesComponent implements OnInit {
 
   spinner: boolean;
   tipoReporte: string;
+  urlServer: string;
 
   constructor(
     private formulariosService: FormulariosService,
@@ -20,6 +22,7 @@ export class ReportesComponent implements OnInit {
   ) {
     this.tipoReporte = '0';
     this.spinner = false;
+    this.urlServer = environment.apiUrl;
   }
 
   ngOnInit(): void {

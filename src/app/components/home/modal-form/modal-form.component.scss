@@ -1,0 +1,96 @@
+$streaming-color: #e3c06c;
+.modal-content {
+    width: fit-content;
+    padding: 2rem;
+    border-radius: 0%;
+}
+
+.containerContador {
+    margin: 0 auto;
+    max-width: 600px;
+    border-radius: 10px;
+    background-image: url('/assets/images/fondo/fondo_contador.png');
+    background-repeat: no-repeat;
+}
+
+#reloj {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.form-group>input {
+    font-size: 14px;
+}
+
+.modal-body>h2 {
+    text-align: center;
+}
+
+.btnStyle {
+    background-color: #e8be33;
+    width: 100%;
+    margin-top: 3rem;
+}
+
+input[type="checkbox"]+label {
+    background-color: #e8be33;
+    color: #e8be33;
+}
+
+.bottom {
+    padding-top: 20px;
+}
+
+.r3 {
+    font-weight: bold;
+    font-size: 30px;
+    color: red;
+    background-color: #555;
+    padding: 10px;
+    border: 2px solid #111;
+}
+
+.y3 {
+    font-weight: bold;
+    font-size: 30px;
+    color: yellow;
+    background-color: #555;
+    padding: 10px;
+    border: 2px solid #111;
+}
+
+.b3 {
+    font-weight: bold;
+    font-size: 30px;
+    color: blue;
+    background-color: #555;
+    padding: 10px;
+    border: 2px solid #111;
+}
+
+.containerContador {
+    animation-duration: unset;
+    animation-fill-mode: forwards;
+    animation-name: imgContador;
+}
+
+@keyframes imgContador {
+    10% {
+        opacity: 0.8;
+    }
+    30% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.3;
+    }
+    70% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 0.9;
+    }
+}
