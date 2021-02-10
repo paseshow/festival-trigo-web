@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: "https://festival-api-test.herokuapp.com/"
+  apiUrl: "https://test-festival-trigar-api.herokuapp.com/"
 };
