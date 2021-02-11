@@ -272,19 +272,22 @@ $tamaño-tituloagenda: 27px;
     .logo-patern {
         width: 50%;
     }
-    .textRedesSociales {
-        color: white;
-        font-weight: bold;
-        font-size: 17px;
-        text-align: center;
-    }
-    .logosImgRedes {
-        margin: 20px 0;
-    }
-    .imgHistoria {
-        width: 80%;
-        text-align: center;
-    }
+}
+
+.textRedesSociales {
+    color: white !important;
+    font-weight: bold;
+    font-size: 17px;
+    text-align: center;
+}
+
+.logosImgRedes {
+    margin: 20px 0;
+}
+
+.imgHistoria {
+    width: 80%;
+    text-align: center;
 }
 
 .imgStream {
