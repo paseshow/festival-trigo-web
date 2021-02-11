@@ -1,4 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import { EventoesService } from 'src/app/services/eventoes.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +16,10 @@ export class HomeComponent implements OnInit {
   nombre: any;
   isMobile: boolean;
 
-  constructor() { }
+  constructor(
+    private eventoesService: EventoesService,
+    private route: Router
+  ) { }
 
   ngOnInit(): void {
     this.isMobile = false;
@@ -68,5 +74,29 @@ export class HomeComponent implements OnInit {
 
   }
 
+  //-----------------------------------
+  // Validamos evento activo y la fecha
+  //-----------------------------------
+  openStream() {
+    this.eventoesService.getEventosActivos().subscribe(
+      next => {
+        let fechaHoy: any = Date.now();
 
+        next.forEach(unEvento => {
+          if (Date.parse(unEvento.fechaEvento) < fechaHoy)
+            this.route.navigate(['/stream']);
+          else {
+            Swal.fire({
+              position: 'center',
+              icon: 'error',
+              title: 'Aun el evento no esta activo!',
+              showConfirmButton: false,
+              timer: 2000
+            })
+          }
+        });
+      }, error => {
+
+      });
+  }
 }
