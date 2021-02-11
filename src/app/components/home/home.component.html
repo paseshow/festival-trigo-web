@@ -25,105 +25,97 @@
     <section id="logos">
         <div class="contenedor-carrusel">
 
-            <div class="col col-md-12 text-center" style="padding: 5px;">
-                <h2 class="tit-logos"> Sponsors </h2>
+            <div class="text-center" style="padding-top: 15px;">
+                <h2 class="tit-logos"> Sponsors</h2>
             </div>
 
-            <ngx-slick-carousel id="carouselExampleControls" data-ride="carousel" class="carousel" #slickModal="slick-carousel" [config]="slideConfig" (afterChange)="afterChange($event)" (beforeChange)="beforeChange($event)">
-                <div class="nav-btn prev-slide slick-arrow" aria-disabled="false"></div>
+            <div class="container-fluid grid-div-img">
+                <div *ngFor="let slide of slides">
 
-                <div ngxSlickItem *ngFor="let slide of slides" class="col slide">
-                    <img src="../../../assets/images/sponsors/{{ slide.nombre }}.png" alt="carrusel" width="100%">
-                </div>
+                    <img class="logos-carrusel" src="../../../assets/images/sponsors/{{ slide.nombre }}.png" alt="carrusel">
 
-                <div class="nav-btn next-slide slick-arrow" aria-disabled="false"></div>
-            </ngx-slick-carousel>
-
-
-            <!--BANNERS ORGANIZAN-->
-            <!-- titulos patern y org -->
-            <div class="container-fluid" style="margin-top: 25px;">
-                <div class="row">
-                    <div class="col-2 col-md-2">
-                        <div>
-                            <h2 class="tit-logos text-center" style="margin-right: 40px;">Paterns</h2>
-                        </div>
-                    </div>
-
-                    <div class="col-10 col-md-10">
-                        <div style="padding: 5px;">
-                            <h2 class="tit-logos text-center">Organizan e invitan</h2>
-                        </div>
-                    </div>
-
-                    <!-- Logos paterns y organizan -->
-
-                    <div class="row">
-                        <div class="col-2 col-md-2">
-                            <img class="size-mo" src="../../../assets/images/patern/patern.png" alt="bolsa cereales cordoba">
-                        </div>
-
-                        <div class="col-10 col-md-10 d-flex flex-md-row align-items-center justify-content-around">
-                            <div *ngFor="let image of images">
-                                <img class="size-mo" src="../../../assets/images/logosOrganizadores/{{image}}.png" alt="logos-organizadores">
-                            </div>
-                        </div>
-
-                    </div>
                 </div>
             </div>
 
+            <!--MARCAS ORGANIZAN E INVITAN logos-org-div-->
+            <div class="text-center" style="padding-top: 15px; padding-bottom: 15px;">
+                <h2 class="tit-logos"> Organizan e invitan</h2>
+            </div>
+            <div class="container-fluid grid-organizan-invitan-cont">
 
-            <!--SPONSOR FIESTA NACIONAL-->
+                <div *ngFor="let image of images">
+                    <img class="img-marcas-organizan-invitan" src="../../../assets/images/logosOrganizadores/{{image}}.png" alt="logos-organizadores">
+                </div>
 
-            <div class="container-fluid" style="margin-top: 25px; padding-bottom: 15px;">
-                <div class="row">
+            </div>
 
-                    <div class="col col-md-12 text-center" style="padding: 5px;">
-                        <h2 class="tit-logos"> Organizadores Oficiales </h2>
-                    </div>
+            <!--ORGANIZADORES OFICIALES FIESTA NACIONAL class="col col-md"-->
 
-                    <div class="d-flex flex-md-row align-items-center">
-                        <div class="col col-md" *ngFor="let logo of logosOficiales">
-                            <img class="size-mo" src="../../../assets/images/logosOficiales/{{logo}}.png" alt="logos-oficiales">
-                        </div>
-                    </div>
+            <div class="text-center" style="padding-top: 15px; padding-bottom: 15px;">
+                <h2 class="tit-logos"> Organizadores Oficiales </h2>
+            </div>
+
+            <div class="container-fluid grid-logos-org">
+                <div *ngFor="let logo of logosOficiales">
+
+                    <img class="size-mo" src="../../../assets/images/logosOficiales/{{logo}}.png" alt="logos-oficiales">
 
                 </div>
             </div>
+
+            <!-- PATERN -->
+
+            <div class="patern-title text-center">
+                <h2 class="tit-logos text-center">Paterns</h2>
+            </div>
+            <div class="container grid-patern-logo" style="padding-bottom: 18px;">
+
+                <div class="logo-patern-div">
+                    <img class="logo-patern" src="../../../assets/images/patern/patern.png" alt="logo-patern-agricultura">
+                </div>
+
+            </div>
+
         </div>
     </section>
-
 
 
     <!-- CRONOGRAMA CON FOTOS -->
-    <section id="cronograma">
-        <div class="fondo-crono-tri container-fluid">
+
+    <div class="fondo-crono-tri container-fluid">
+
+        <!-- AGENDA Y SPEAKERS -->
+        <div class="d-flex justify-content-center ">
 
             <img class="trigar-logo" src="../../../assets/images/logos/Trigar.png" alt="Trigar">
 
-            <div class="container p-0 mx-auto ">
-                <div class="row">
+        </div>
 
-                    <div class="col col-md-6">
-                        <h2 class="titulo-agenda"> Jueves 11 Febrero</h2>
-                        <img class="cronogramaimg" src="../.../../../../assets/images/agenda/cronograma-1.png" alt="cronograma1">
-                        <img class="cronogramaimg" src="../../../assets/images/agenda/Cronograma-2.png" alt="">
-                    </div>
+        <div class="container">
+            <div class="row">
 
-                    <div class="col col-md-6">
-                        <h2 class="titulo-agenda"> Viernes 12 Febrero</h2>
-                        <img class="cronogramaimg" src="../../../assets/images/agenda/cronograma-3.png" alt="">
-                    </div>
-
-
+                <div class="col col-md-6">
+                    <h2 class="titulo-agenda"> Jueves 11 Febrero</h2>
+                    <img class="cronogramaimg" src="../.../../../../assets/images/agenda/cronograma-1.png" alt="cronograma1">
+                    <img class="cronogramaimg" src="../../../assets/images/agenda/Cronograma-2.png" alt="">
                 </div>
+
+                <div class="col col-md-6">
+                    <h2 class="titulo-agenda"> Viernes 12 Febrero</h2>
+                    <img class="cronogramaimg" src="../../../assets/images/agenda/cronograma-3.png" alt="">
+                </div>
+
+
             </div>
         </div>
-    </section>
+    </div>
 
 
-
+    <!-- <section id="historia">
+        <div class="container mx-auto d-flex justify-content-center">
+            <img class="imgHistoria " src="../../../assets/images/fondo/Historia.png">
+        </div>
+    </section> -->
 
     <!-- CRONOGRAMA CON TRIGUITOS -->
     <div class="fondo-crono-ft">
@@ -209,52 +201,49 @@
     </section>
 
     <!-- INSTRUCCIONES PARA INGRESAR AL STREAM -->
-    <section id="stream">
-        <div class="container inst-str">
-            <div class="row">
+    <div class="container inst-str">
+        <div class="row">
 
-                <h1 class="instrucciones-text">RECOMENDACIONES PARA EL STREAMING</h1>
-
+            <h1 class="instrucciones-text">RECOMENDACIONES PARA EL STREAMING</h1>
 
 
-                <div class="container containerStream mt-5">
-                    <div class="row">
-                        <div class="col-6 col-sm-3" style="max-height: 150px !important;">
-                            <div class="text-center" style="max-height: 150px !important;">
-                                <img class="imgStream" src="../../../assets/images/Recomendaciones/spotify.png">
-                                <p class="fs-2 textStream text-break">Chequear que la conexión a internet sea estable.
-                                </p>
-                            </div>
+
+            <div class="container containerStream mt-5">
+                <div class="row">
+                    <div class="col-6 col-sm-3" style="max-height: 150px !important;">
+                        <div class="text-center" style="max-height: 150px !important;">
+                            <img class="imgStream" src="../../../assets/images/Recomendaciones/spotify.png">
+                            <p class="fs-2 textStream text-break">Chequear que la conexión a internet sea estable.
+                            </p>
                         </div>
-                        <div class="col-6 col-sm-3" style="max-height: 150px !important;">
-                            <div class="text-center" style="max-height: 150px !important;">
-                                <img class="imgStream" src="../../../assets/images/Recomendaciones/bateria.png">
-                                <p class="fs-2 textStream text-break">Asegúrate que tus dispositivos estén cargados.</p>
-                            </div>
-                        </div>
-
-                        <div class="col-6 col-sm-3" style="max-height: 150px !important;">
-                            <div class="text-center">
-                                <img class="imgStream" src="../../../assets/images/Recomendaciones/sofa.png">
-                                <p class="fs-2 textStream text-break">Busca un sitio comodo.</p>
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-3" style="max-height: 150px !important;">
-                            <div class="text-center">
-                                <img class="imgStream" src="../../../assets/images/Recomendaciones/disfruta.png">
-                                <p class="fs-2 textStream text-break">Prepárate para aprender y disfrutar.</p>
-                            </div>
-                        </div>
-
                     </div>
-                </div>
-                <div class="boton-contenedor mt-5">
-                    <button class="boton-ing-str" type="button" (click)="openStream()">Ir al Streaming</button>
+                    <div class="col-6 col-sm-3" style="max-height: 150px !important;">
+                        <div class="text-center" style="max-height: 150px !important;">
+                            <img class="imgStream" src="../../../assets/images/Recomendaciones/bateria.png">
+                            <p class="fs-2 textStream text-break">Asegúrate que tus dispositivos estén cargados.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-sm-3" style="max-height: 150px !important;">
+                        <div class="text-center">
+                            <img class="imgStream" src="../../../assets/images/Recomendaciones/sofa.png">
+                            <p class="fs-2 textStream text-break">Busca un sitio comodo.</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-3" style="max-height: 150px !important;">
+                        <div class="text-center">
+                            <img class="imgStream" src="../../../assets/images/Recomendaciones/disfruta.png">
+                            <p class="fs-2 textStream text-break">Prepárate para aprender y disfrutar.</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
+            <div class="boton-contenedor mt-5">
+                <button class="boton-ing-str" type="button" (click)="openStream()">Ir al Streaming</button>
+            </div>
         </div>
-    </section>
-    <!-- finContainer -->
+    </div>
 
     <section id="contactos">
         <div class="container containerContacto">
@@ -267,22 +256,22 @@
                                 <a target="_blank" rel="noreferrer noopener" href="https://web.facebook.com/Fiesta-Nacional-del-Trigo-337298449641734?_rdc=1&_rdr">
                                     <img src="../../../assets/images/Redes/fb_rojo.png" width="50px" height="50px">
                                     <i class="bi bi-facebook textRedesSociales ">
-                                    Fiesta Nacional del Trigo
-                                </i>
+                    Fiesta Nacional del Trigo
+                  </i>
                                 </a>
                                 <br>
                                 <a target="_blank" rel="noreferrer noopener" href="https://www.instagram.com/fiestanacionaldeltrigo/">
                                     <img src="../../../assets/images/Redes/inst_rojo.png" width="50px" height="50px">
                                     <i class="bi bi-instagram textRedesSociales">
-                                    Fiesta Nacional del Trigo
-                                </i>
+                    Fiesta Nacional del Trigo
+                  </i>
                                 </a>
                             </div>
                             <div class="col-12 col-sm-12 col-md-12 col-lg-6 text-center">
                                 <img src="../../../assets/images/Redes/wsp_rojo.png" width="50px" height="50px">
                                 <i class="bi bi-whatsapp textRedesSociales">
-                                    +54 9 3472 43-7935
-                                </i>
+                  +54 9 3472 43-7935
+                </i>
                             </div>
                         </div>
                     </div>
@@ -295,29 +284,29 @@
                                 <a target="_blank" rel="noreferrer noopener" href="https://web.facebook.com/CongresoTrigAR">
                                     <img src="../../../assets/images/Redes/fb_celeste.png" width="50px" height="50px">
                                     <i class="bi bi-facebook textRedesSociales">
-                                        @CongresoTrigAR
-                                    </i>
+                    @CongresoTrigAR
+                  </i>
                                 </a>
                                 <br>
                                 <a target="_blank" rel="noreferrer noopener" href="https://www.instagram.com/CongresoTrigAR/">
                                     <img src="../../../assets/images/Redes/inst_celeste.png" width="50px" height="50px">
                                     <i class="bi bi-instagram textRedesSociales">
-                                        @CongresoTrigAR
-                                    </i>
+                    @CongresoTrigAR
+                  </i>
                                 </a>
                             </div>
                             <div class="col-12 col-sm-12 col-md-12 col-lg-6 text-center">
                                 <a target="_blank" rel="noreferrer noopener" href="info@trigar.com.ar">
                                     <img src="../../../assets/images/Redes/gmail_celeste.png" width="50px" height="50px">
                                     <i class="bi bi-whatsapp textRedesSociales">
-                                        info@trigar.com.ar
-                                    </i>
+                    info@trigar.com.ar
+                  </i>
                                 </a>
                                 <br>
                                 <a target="_blank" rel="noreferrer noopener" href="https://twitter.com/CongresoTrigAR"><img src="../../../assets/images/Redes/tw_celeste.png" width="50px" height="50px">
                                     <i class="bi bi-instagram textRedesSociales">
-                                        @CongresoTrigAR
-                                    </i>
+                    @CongresoTrigAR
+                  </i>
                                 </a>
                             </div>
                         </div>
@@ -327,4 +316,9 @@
         </div>
     </section>
 
+
+
+
+
 </div>
+<!-- finRow -->
