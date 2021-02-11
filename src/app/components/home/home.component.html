@@ -15,6 +15,10 @@
   <section id="logos">
     <div class="contenedor-carrusel">
 
+      <div class="text-center" style="padding-top: 15px;">
+        <h2 class="tit-logos"> Sponsors</h2>
+      </div>
+
       <div class="container-fluid grid-div-img">
         <div *ngFor="let slide of slides">
 
@@ -23,55 +27,49 @@
         </div>
       </div>
 
-      <!--BANNERS ORGANIZAN-->
+      <!--MARCAS ORGANIZAN E INVITAN logos-org-div-->
+      <div class="text-center"  style="padding-top: 15px; padding-bottom: 15px;">
+        <h2 class="tit-logos"> Organizan e invitan</h2>
+      </div>
+      <div class="container-fluid grid-organizan-invitan-cont">
 
-      <div class="container-fluid grid-logos-org">
-        <div class="row">
-
-          <div class="patern-title text-center">
-            <h2 class="tit-logos text-center">Paterns</h2>
-          </div>
-
-          <div class="logo-patern-div">
-            <img class="logo-patern" src="../../../assets/images/patern/patern.png" alt="logo-patern-agricultura">
-          </div>
-
+        <div *ngFor="let image of images">
+          <img class="img-marcas-organizan-invitan" src="../../../assets/images/logosOrganizadores/{{image}}.png"
+            alt="logos-organizadores">
         </div>
 
-        <div class="row">
-
-          <div class="org-title">
-            <h2 class="tit-logos">Organizan e invitan</h2>
-          </div>
-
-          
-          <div class="logos-org-div">
-            <ng-container *ngFor="let image of images">
-              <img src="../../../assets/images/logosOrganizadores/{{image}}.png" alt="logos-organizadores">
-            </ng-container>
-          </div>
-        </div>
       </div>
 
+      <!--ORGANIZADORES OFICIALES FIESTA NACIONAL class="col col-md"-->
 
-      <!--SPONSOR FIESTA NACIONAL-->
-
-      <div class="text-center">
+      <div class="text-center" style="padding-top: 15px; padding-bottom: 15px;">
         <h2 class="tit-logos"> Organizadores Oficiales </h2>
       </div>
 
-      <div class="container-fluid grid-div-img">
-
-
-        <div class="col col-md" *ngFor="let logo of logosOficiales">
+      <div class="container-fluid grid-logos-org">
+        <div *ngFor="let logo of logosOficiales">
 
           <img class="size-mo" src="../../../assets/images/logosOficiales/{{logo}}.png" alt="logos-oficiales">
 
         </div>
+      </div>
+
+      <!-- PATERN -->
+
+      <div class="patern-title text-center">
+        <h2 class="tit-logos text-center">Paterns</h2>
+      </div>
+      <div class="container grid-patern-logo" style="padding-bottom: 18px;">
+
+          <div class="logo-patern-div">
+            <img class="logo-patern" src="../../../assets/images/patern/patern.png" alt="logo-patern-agricultura">
+          </div>
         
       </div>
 
-      <!-- <div class="container-fluid" style="margin-top: 25px; padding-bottom: 15px;">
+    </div>
+
+    <!-- <div class="container-fluid" style="margin-top: 25px; padding-bottom: 15px;">
         <div class="row">
 
           <div class="col col-md-12 text-center" style="padding: 5px;">
@@ -93,85 +91,87 @@
     </div>
   </section> -->
 
-  <!-- CRONOGRAMA CON FOTOS -->
+    <!-- CRONOGRAMA CON FOTOS -->
 
-  <div class="fondo-crono-tri container-fluid">
+    <div class="fondo-crono-tri container-fluid">
 
-    <!-- AGENDA Y SPEAKERS -->
-    <div class="d-flex justify-content-center ">
+      <!-- AGENDA Y SPEAKERS -->
+      <div class="d-flex justify-content-center ">
 
-      <img class="trigar-logo" src="../../../assets/images/logos/Trigar.png" alt="Trigar">
+        <img class="trigar-logo" src="../../../assets/images/logos/Trigar.png" alt="Trigar">
 
+      </div>
+
+      <div class="container">
+        <div class="row">
+
+          <div class="col col-md-6">
+            <h2 class="titulo-agenda"> Jueves 11 Febrero</h2>
+            <img class="cronogramaimg" src="../.../../../../assets/images/agenda/cronograma-1.png" alt="cronograma1">
+            <img class="cronogramaimg" src="../../../assets/images/agenda/Cronograma-2.png" alt="">
+          </div>
+
+          <div class="col col-md-6">
+            <h2 class="titulo-agenda"> Viernes 12 Febrero</h2>
+            <img class="cronogramaimg" src="../../../assets/images/agenda/cronograma-3.png" alt="">
+          </div>
+
+
+        </div>
+      </div>
     </div>
 
-    <div class="container">
+    <section id="historia">
+      <div class="container mx-auto d-flex justify-content-center">
+        <img class="imgHistoria " src="../../../assets/images/fondo/Historia.png">
+      </div>
+    </section>
+
+    <!-- CRONOGRAMA CON TRIGUITOS -->
+    <div class="fondo-crono-ft">
+
+      <div class="contenedor-agenda-logo">
+        <img src="../../../assets/images/logos/Fiestanacionaltrigo.png" alt="fiesta nacional del trigo" width=" 310px">
+        <h2 class="titulo-agenda">Sábado 13 de febrero</h2>
+      </div>
+
+      <div class="container contenedor-img-agenda-ft d-flex justify-content-center">
+        <div class="row">
+
+          <div class="col-12 col-md-6 text-center">
+            <img class="cronogramaimg" src=".../../../../../assets/images/agenda/cronogramaFNT1.png"
+              alt="cronograma1-23">
+          </div>
+
+          <div class="col-12 col-md-6 text-center">
+            <img class="cronogramaimg" src=".../../../../../assets/images/agenda/cronogramaFNT2.png"
+              alt="cronograma1-24">
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- INSTRUCCIONES PARA INGRESAR AL STREAM -->
+    <div class="container inst-str">
       <div class="row">
 
-        <div class="col col-md-6">
-          <h2 class="titulo-agenda"> Jueves 11 Febrero</h2>
-          <img class="cronogramaimg" src="../.../../../../assets/images/agenda/cronograma-1.png" alt="cronograma1">
-          <img class="cronogramaimg" src="../../../assets/images/agenda/Cronograma-2.png" alt="">
+        <h1 class="instrucciones-text">INSTRUCCIONES PARA INGRESAR AL STREAMING</h1>
+
+        <div class="icon-stream">
+          <i class="bi bi-display"></i>
+
         </div>
 
-        <div class="col col-md-6">
-          <h2 class="titulo-agenda"> Viernes 12 Febrero</h2>
-          <img class="cronogramaimg" src="../../../assets/images/agenda/cronograma-3.png" alt="">
+        <div class="boton-contenedor">
+          <button class="boton-ing-str" type="button">Ir al Streaming</button>
         </div>
+
+
 
 
       </div>
+      <!-- finRow -->
     </div>
-  </div>
+    <!-- finContainer -->
 
-  <section id="historia">
-    <div class="container mx-auto d-flex justify-content-center">
-      <img class="imgHistoria " src="../../../assets/images/fondo/Historia.png">
-    </div>
-  </section>
-
-  <!-- CRONOGRAMA CON TRIGUITOS -->
-  <div class="fondo-crono-ft">
-
-    <div class="contenedor-agenda-logo">
-      <img src="../../../assets/images/logos/Fiestanacionaltrigo.png" alt="fiesta nacional del trigo" width=" 310px">
-      <h2 class="titulo-agenda">Sábado 13 de febrero</h2>
-    </div>
-
-    <div class="container contenedor-img-agenda-ft d-flex justify-content-center">
-      <div class="row">
-
-        <div class="col-12 col-md-6 text-center">
-          <img class="cronogramaimg" src=".../../../../../assets/images/agenda/cronogramaFNT1.png" alt="cronograma1-23">
-        </div>
-
-        <div class="col-12 col-md-6 text-center">
-          <img class="cronogramaimg" src=".../../../../../assets/images/agenda/cronogramaFNT2.png" alt="cronograma1-24">
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <!-- INSTRUCCIONES PARA INGRESAR AL STREAM -->
-  <div class="container inst-str">
-    <div class="row">
-
-      <h1 class="instrucciones-text">INSTRUCCIONES PARA INGRESAR AL STREAMING</h1>
-
-      <div class="icon-stream">
-        <i class="bi bi-display"></i>
-
-      </div>
-
-      <div class="boton-contenedor">
-        <button class="boton-ing-str" type="button">Ir al Streaming</button>
-      </div>
-
-
-
-
-    </div>
-    <!-- finRow -->
-  </div>
-  <!-- finContainer -->
-</div>
