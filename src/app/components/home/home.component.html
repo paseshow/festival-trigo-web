@@ -1,10 +1,22 @@
 <app-modal-form></app-modal-form>
-<div class="cuerpo-home">
+<div #cuerpoHtml class="cuerpo-home">
 
     <!-- SLIDER -->
     <section id="inicio">
-        <div class="slider-home">
+        <div *ngIf="!isMobile" class="slider-home">
             <img class="slider-img" src="../../../assets/images/fondo/Slider-del-sitio-web-1.jpg" alt="slider-home" width="100%">
+        </div>
+
+        <div *ngIf="isMobile" class="slider-home">
+            <!-- <img class="slider-img" src="../../../assets/images/fondo/foto-del-slider.jpg" alt="slider-home" width="100%"> -->
+            <div class="sliderMobile mx-auto">
+                <img class="rounded mx-auto d-block" src="../../../assets/images/logos/fiesta-del-trigo-Nº65.png" width="75%" height="70%">
+                <img class="rounded mx-auto d-block" src="../../../assets/images/logos/trigar-slider.png" width="75%" height="70%">
+                <p class="textSlider">11 de febrero 18hs</p>
+                <p class="textSlider">12 de febrero 09hs</p>
+                <p class="textSlider pb-2">13 de febrero 09hs</p>
+
+            </div>
         </div>
     </section>
 
@@ -137,8 +149,62 @@
     </div>
 
     <section id="historia">
-        <div class="container mx-auto d-flex justify-content-center">
+        <div *ngIf="!isMobile" class="container mx-auto d-flex justify-content-center">
             <img class="imgHistoria " src="../../../assets/images/fondo/Historia.png">
+        </div>
+
+        <div *ngIf="isMobile" class="container mx-auto d-flex justify-content-center">
+            <img class="imgHistoria " src="../../../assets/images/Historia/titile.png" width="100%">
+        </div>
+
+        <div *ngIf="isMobile" class="container containerHistoria p-0">
+            <p class="textHistoria text-break">La Fiesta Nacional del Trigo es una de las festividades más antiguas del país. Este mega evento que se realiza cada año desde 1947 es una oportunidad de festejo para toda la familia donde el trigo es protagonista.</p>
+
+            <div class="container p-0">
+                <img class="imgHistoria " src="../../../assets/images/Historia/semillas.png" width="80%">
+                <div class="rectangulo"></div>
+            </div>
+
+        </div>
+
+        <div *ngIf="isMobile" class="container containerHistoria p-0 mt-3">
+            <p class="textHistoria text-break">Organizada en la localidad de Leones, Capital Nacional del Trigo.</p>
+
+            <div class="container p-0">
+                <img class="imgHistoria " src="../../../assets/images/Historia/fase1.png" width="80%">
+                <div class="rectangulo"></div>
+            </div>
+
+        </div>
+
+        <div *ngIf="isMobile" class="container containerHistoria p-0 mt-3">
+            <p class="textHistoria text-break">Este encuentro luego se declaró Fiesta Nacional en 1956 y constituye una de las conmemoraciones más tradicionales a los productores de este reconocido cereal.</p>
+
+            <div class="container p-0">
+                <img class="imgHistoria " src="../../../assets/images/Historia/fase2.png" width="80%">
+                <div class="rectangulo"></div>
+            </div>
+
+        </div>
+
+        <div *ngIf="isMobile" class="container containerHistoria p-0 mt-3">
+            <p class="textHistoria text-break">En cada edición, ofrece un marco propicio para desarrollar jornadas trigueras nacionales y jornadas técnicas. A su vez, se realizan concursos nacionales de muestras de trigo y el clásico desfile de carrozas, alegorías y maquinarias.</p>
+
+            <div class="container p-0">
+                <img class="imgHistoria " src="../../../assets/images/Historia/fase3.png" width="80%">
+                <div class="rectangulo"></div>
+            </div>
+
+        </div>
+
+        <div *ngIf="isMobile" class="container containerHistoria p-0 mt-3">
+            <p class="textHistoria text-break">Por su parte, este evento incluye la elección y coronación de la Reina Nacional del Trigo. Además, sobre sus escenarios se despliegan shows musicales y espectáculos artísticos durante las diversas jornadas.</p>
+
+            <div class="container p-0">
+                <img class="imgHistoria " src="../../../assets/images/Historia/fase4.png" width="80%">
+                <div class="rectangulo"></div>
+            </div>
+
         </div>
     </section>
 
@@ -163,14 +229,14 @@
                         <div class="col-6 col-sm-3" style="max-height: 150px !important;">
                             <div class="text-center" style="max-height: 150px !important;">
                                 <img class="imgStream" src="../../../assets/images/Recomendaciones/bateria.png">
-                                <p class="fs-2 textStream text-break">Busca un sitio comodo.</p>
+                                <p class="fs-2 textStream text-break">Asegúrate que tus dispositivos estén cargados.</p>
                             </div>
                         </div>
 
                         <div class="col-6 col-sm-3" style="max-height: 150px !important;">
                             <div class="text-center">
                                 <img class="imgStream" src="../../../assets/images/Recomendaciones/sofa.png">
-                                <p class="fs-2 textStream text-break">Asegúrate que tus dispositivos estén cargados.</p>
+                                <p class="fs-2 textStream text-break">Busca un sitio comodo.</p>
                             </div>
                         </div>
                         <div class="col-6 col-sm-3" style="max-height: 150px !important;">
@@ -183,7 +249,7 @@
                     </div>
                 </div>
                 <div class="boton-contenedor mt-5">
-                    <button class="boton-ing-str" type="button">Ir al Streaming</button>
+                    <button class="boton-ing-str" type="button" (click)="openStream()">Ir al Streaming</button>
                 </div>
             </div>
         </div>
@@ -198,15 +264,22 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-12 col-sm-12 col-md-12 col-lg-6 text-center">
-                                <i class="bi bi-facebook textRedesSociales ">
+                                <a target="_blank" rel="noreferrer noopener" href="https://web.facebook.com/Fiesta-Nacional-del-Trigo-337298449641734?_rdc=1&_rdr">
+                                    <img src="../../../assets/images/Redes/fb_rojo.png" width="50px" height="50px">
+                                    <i class="bi bi-facebook textRedesSociales ">
                                     Fiesta Nacional del Trigo
                                 </i>
+                                </a>
                                 <br>
-                                <i class="bi bi-instagram textRedesSociales">
+                                <a target="_blank" rel="noreferrer noopener" href="https://www.instagram.com/fiestanacionaldeltrigo/">
+                                    <img src="../../../assets/images/Redes/inst_rojo.png" width="50px" height="50px">
+                                    <i class="bi bi-instagram textRedesSociales">
                                     Fiesta Nacional del Trigo
                                 </i>
+                                </a>
                             </div>
                             <div class="col-12 col-sm-12 col-md-12 col-lg-6 text-center">
+                                <img src="../../../assets/images/Redes/wsp_rojo.png" width="50px" height="50px">
                                 <i class="bi bi-whatsapp textRedesSociales">
                                     +54 9 3472 43-7935
                                 </i>
@@ -219,22 +292,33 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-12 col-sm-12 col-md-12 col-lg-6 text-center">
-                                <i class="bi bi-facebook textRedesSociales">
-                                    @CongresoTrigAR
-                                </i>
+                                <a target="_blank" rel="noreferrer noopener" href="https://web.facebook.com/CongresoTrigAR">
+                                    <img src="../../../assets/images/Redes/fb_celeste.png" width="50px" height="50px">
+                                    <i class="bi bi-facebook textRedesSociales">
+                                        @CongresoTrigAR
+                                    </i>
+                                </a>
                                 <br>
-                                <i class="bi bi-instagram textRedesSociales">
-                                    @CongresoTrigAR
-                                </i>
+                                <a target="_blank" rel="noreferrer noopener" href="https://www.instagram.com/CongresoTrigAR/">
+                                    <img src="../../../assets/images/Redes/inst_celeste.png" width="50px" height="50px">
+                                    <i class="bi bi-instagram textRedesSociales">
+                                        @CongresoTrigAR
+                                    </i>
+                                </a>
                             </div>
                             <div class="col-12 col-sm-12 col-md-12 col-lg-6 text-center">
-                                <i class="bi bi-whatsapp textRedesSociales">
-                                    info@trigar.com.ar
-                                </i>
+                                <a target="_blank" rel="noreferrer noopener" href="info@trigar.com.ar">
+                                    <img src="../../../assets/images/Redes/gmail_celeste.png" width="50px" height="50px">
+                                    <i class="bi bi-whatsapp textRedesSociales">
+                                        info@trigar.com.ar
+                                    </i>
+                                </a>
                                 <br>
-                                <i class="bi bi-instagram textRedesSociales">
-                                    @CongresoTrigAR
-                                </i>
+                                <a target="_blank" rel="noreferrer noopener" href="https://twitter.com/CongresoTrigAR"><img src="../../../assets/images/Redes/tw_celeste.png" width="50px" height="50px">
+                                    <i class="bi bi-instagram textRedesSociales">
+                                        @CongresoTrigAR
+                                    </i>
+                                </a>
                             </div>
                         </div>
                     </div>

@@ -66,8 +66,21 @@ export class NavbarComponent implements OnInit, OnChanges, AfterViewChecked {
         }
     };
 
+    //-----------------------------------------------------
+    // Metodo para hacer el smoothscroll sobre la page home
+    // Validamos la url de donde esta parado actualmente.
+    // cuando está desde el streaming se redirigi a home, si no
+    // se hace el smoothScroll.
+    // @param: seccion seleccionada del navbar 
+    //-----------------------------------------------------
     smmoothScroll(seccion: string): void {
-        document.getElementById(`${seccion}`).scrollIntoView();
+
+        let urlOrigin: string = window.location.href;
+        if (urlOrigin.indexOf("stream") != -1) {
+            this.route.navigate(['']);
+        } else {
+            document.getElementById(`${seccion}`).scrollIntoView();
+        }
     }
 
     //-----------------------------------------------------------

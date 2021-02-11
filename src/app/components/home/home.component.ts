@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import { EventoesService } from 'src/app/services/eventoes.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-home',
@@ -7,12 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  @ViewChild("cuerpoHtml", { static: false }) cuerpoHtml: ElementRef;
+
   correo: any;
   nombre: any;
+  isMobile: boolean;
 
-  constructor() { }
+  constructor(
+    private eventoesService: EventoesService,
+    private route: Router
+  ) { }
 
   ngOnInit(): void {
+    this.isMobile = false;
     this.getFormulario();
   }
 
@@ -31,6 +41,14 @@ export class HomeComponent implements OnInit {
     "infinite": true
   };
 
+  ngAfterViewChecked(): void {
+    let a = this.cuerpoHtml.nativeElement.offsetWidth;
+
+    if (a <= 466) {
+      this.isMobile = true;
+    }
+
+  }
 
   afterChange(e) {
     console.log('afterChange');
@@ -54,5 +72,31 @@ export class HomeComponent implements OnInit {
 
   getFormulario(): void {
 
+  }
+
+  //-----------------------------------
+  // Validamos evento activo y la fecha
+  //-----------------------------------
+  openStream() {
+    this.eventoesService.getEventosActivos().subscribe(
+      next => {
+        let fechaHoy: any = Date.now();
+
+        next.forEach(unEvento => {
+          if (Date.parse(unEvento.fechaEvento) < fechaHoy)
+            this.route.navigate(['/stream']);
+          else {
+            Swal.fire({
+              position: 'center',
+              icon: 'error',
+              title: 'Aun el evento no esta activo!',
+              showConfirmButton: false,
+              timer: 2000
+            })
+          }
+        });
+      }, error => {
+
+      });
   }
 }
