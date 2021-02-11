@@ -1,0 +1,47 @@
+<!-- Button trigger modal -->
+<button id="btnModal" type="button" class="btn btn-primary paddingTop" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div *ngIf="noEsHora" class=" modal-content modal-dialog" [ngClass]="{'containerContador': noEsHora}">
+            <div id="contenedor" style="text-align: center;">
+                <br>
+                <h2>Faltan:</h2>
+                <div id="contador" style="font-size: 45px; font-weight: bold;"></div>
+                <p>(Días - Horas - Minutos - Segundos)</p>
+                <br>
+                <h4><i>¡ Para el festival !</i></h4>
+            </div>
+        </div>
+        <div *ngIf="!noEsHora" class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Formulario De Ingreso</h5>
+                <button *ngIf="true" #btnCloseModal type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="modalForm">
+                    <div class="form-group">
+
+                        <label for="nameForm" aria-placeholder="nombre"></label>
+                        <input type="text" formControlName="nombre" class="form-control" id="nameForm" placeholder="Nombre" [ngClass]="{ 'is-invalid': submitted && fm.nombre.errors }">
+
+                        <label for="lastNameForm" aria-placeholder="apellido"></label>
+                        <input type="text" formControlName="apellido" class="form-control" id="lastNameForm" placeholder="Apellido" [ngClass]="{ 'is-invalid': submitted && fm.apellido.errors }">
+
+                        <label for="exampleInputEmail1" aria-placeholder="email"></label>
+                        <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+
+                        <label for="telForm" aria-placeholder="telefono"></label>
+                        <input type="tel" formControlName="phone" class="form-control" id="telForm" placeholder="Teléfono">
+
+                        <small id="emailHelp" class="form-text text-muted">Nunca compartiremos tu email con otras
+                            personas.</small>
+                    </div>
+                    <button #buttonCloseModal type="button" class="btn btnStyle" (click)="onSubmit()" [disabled]="this.modalForm.invalid">Continuar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

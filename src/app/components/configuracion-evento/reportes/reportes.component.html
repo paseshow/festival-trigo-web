@@ -1,0 +1,12 @@
+<div class="container containerReport paddingTop">
+    <div class="container">
+        <p class="fs-1">Reportes:</p>
+    </div>
+    <label class="camposRequeridos" *ngIf="!(tipoReporte != '0')">Debe seleccionar un tipo de reporte</label>
+
+    <select class="form-select" aria-label="Default select example" (change)="selectTipoReport($event)">
+        <option selected value=0>Tipo reporte</option>
+        <option value="1">Formularios</option>
+    </select>
+    <a href="{{urlServer}}Formularios/export/listado"> <button type="button" class="btn btn-success" [disabled]="!(tipoReporte != '0')">Descargar</button></a>
+</div>
