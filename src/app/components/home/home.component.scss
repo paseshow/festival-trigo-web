@@ -197,7 +197,9 @@ $tamaño-tituloagenda: 27px;
 }
 
 .tit-logos {
-    font-size: 24px;
+    margin: 20px 0 0 0;
+    font-size: 32px;
+    font-weight: bold;
     text-align: center;
 }
 
@@ -277,7 +279,7 @@ $tamaño-tituloagenda: 27px;
 .textRedesSociales {
     color: white !important;
     font-weight: bold;
-    font-size: 17px;
+    font-size: 15px;
     text-align: center;
 }
 
@@ -315,6 +317,13 @@ $tamaño-tituloagenda: 27px;
     width: 100%;
     height: 20px;
     background: #804000;
+}
+
+.rectanguloGris {
+    margin-top: 15px;
+    width: 80%;
+    height: 3px;
+    background: $fondo-color;
 }
 
 .textSlider {
@@ -380,7 +389,8 @@ $tamaño-tituloagenda: 27px;
         width: 80%;
     }
     .tit-logos {
-        font-size: 15px;
+        font-size: 25px;
+        font-weight: bold;
     }
 }
 
