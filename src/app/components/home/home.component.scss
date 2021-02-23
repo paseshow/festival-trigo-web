@@ -334,6 +334,29 @@ $tamaño-tituloagenda: 27px;
     margin: 0
 }
 
+.trigar-logo-revivi-evento {
+    max-width: 250px;
+    max-height: 170px;
+    text-align: center;
+}
+
+.titulo-edicion {
+    font-size: 21px;
+    color: $streaming-color;
+    text-align: center;
+}
+
+.titulo-Edicion {
+    font-size: 35px;
+    color: $streaming-color;
+    text-align: center;
+}
+
+.videoEdicion {
+    width: 450px;
+    height: 315px;
+}
+
 @media (max-width: 470px) {
     .sliderMobile {
         background-image: url('../../../assets/images/fondo/foto-del-slider.jpg');
@@ -397,5 +420,9 @@ $tamaño-tituloagenda: 27px;
 @media (max-width:999px) {
     .cronogramaimg {
         max-width: 360px;
+    }
+    .videoEdicion {
+        width: 350px;
+        height: 215px;
     }
 }
