@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
 
   slides = [{ nombre: "bancor", tamano: "100" }, { nombre: "gastaldi", tamano: "100" }, { nombre: "fugran", tamano: "100" }, { nombre: "cba1", tamano: "100" }, { nombre: "cba3", tamano: "100" }, { nombre: "ministerioAgGan", tamano: "100" }, { nombre: "culturacba", tamano: "100" }, { nombre: "alcance", tamano: "100" }, { nombre: "asoCoperatArg", tamano: "100" }, { nombre: "bertoto", tamano: "100" }, { nombre: "capello", tamano: "100" }, { nombre: "contimix", tamano: "100" }, { nombre: "contingiani", tamano: "100" }, { nombre: "coperativaleones", tamano: "100" }, { nombre: "leones2", tamano: "100" }, { nombre: "metalfor", tamano: "100" }, { nombre: "salas", tamano: "100" }, { nombre: "torregiani", tamano: "100" }, { nombre: "union100", tamano: "100" }, { nombre: "cospul", tamano: "100" },];
 
-  images = ["cbatodos", "ministagri", "bcca", "bolsacereales", "bolsacerealesba", "escudoleones", "logoleones"];
+  images = ["escudoleones", "logoleones", "cbatodos", "ministagri", "bcca", "bolsacereales", "bolsacerealesba"];
 
   logosOficiales = ["agufran", "biolato", "bonxi", "cbajoven", "guantex", "gulf", "klein", "norte", "releyco", "cegro"]
 
