@@ -43,13 +43,13 @@ export class ModalFormComponent implements OnInit, AfterViewInit {
 
 
   ngAfterViewInit() {
-    if (localStorage.getItem("id") != "sakbcoaknle") {
+    /*if (localStorage.getItem("id") != "sakbcoaknle") {
 
       this.myModal = document.getElementById('btnModal');
       this.myModal.click();
     }
 
-    this.contador();
+    this.contador();*/
   }
 
   // ---------------------------------------------------------------
